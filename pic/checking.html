@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>PIC : Checking of Grades</title>
+
+    <!--BOOTSTRAP-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="../signinlogin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="css/checking.css">
+
+    <!--ICONS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <link rel="icon" href="images/tuplogo.png">
+
+</head>
+
+<body onresize="openpage()">
+    <nav class="navbar navbar-expand-lg" id="tupcnav">
+        <img src="../signinlogin/images/tuplogo.png" width="50" height="50" alt="tuplogo">
+
+        <a class="navbar-brand" href="index.html" id="atech">TECHNOLOGICAL UNIVERSITY <br> OF THE PHILIPPINES</a>
+
+        <form class="d-flex" id="cancelnav">
+            <ul class="navbar-nav mr-auto" id="ulid">
+                <li class="nav-item">
+                    <p class="nav-link" id="studentname">STUDENT: email1@gmail.com </p>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" id="cancelbutton">Cancel</a>
+                </li>
+            </ul>
+        </form>
+
+
+        <i class="bi bi-journal" onclick="details_hide_show()"></i>
+
+
+    </nav>
+
+
+    <section id="offered">
+        <div class="offered">
+            <p>Offered Subjects:</p>
+
+            <label>BET1-C</label>
+            <label>CHEMGEN-C</label>
+            <label>CPET 1L-C</label>
+            <label>BET1-C</label>
+        </div>
+        <a class="nav-link" href="index.html" id="cancelbutton1">Cancel</a>
+    </section>
+
+
+    <section>
+        <div class="grades">
+            <p>CHECKING OF GRADES</p>
+        </div>
+        <form class="needs-validation" name="addremarksform" action="javascript:addremarks();" novalidate>
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="validationTooltip01">Subject Code</label>
+                    <input type="text" class="form-control" id="validationTooltip01" required>
+
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <label for="validationTooltip02">Remarks</label>
+                    <select class="custom-select" id="validationTooltip02" required>
+                  <option selected disabled value="">Choose...</option>
+                  <option value="Failed">Failed</option>
+                  <option value="Passed">Passed</option>
+                </select>
+                </div>
+
+                <div class="remarkbttn">
+                    <button class="btn btn-primary" type="submit" id="addremarks">Add Remarks</button>
+                </div>
+        </form>
+
+        </div>
+
+
+
+
+
+
+        <form>
+
+
+            <div class="tableborder">
+                <table>
+                    <legend>ALL YEAR - ALL SEMESTER</legend>
+                    <thead>
+                        <th>SUBJECT CODE</th>
+                        <th>SUBJECT NAME</th>
+                        <th>YEAR AND SEMESTER</th>
+                        <th>GRADES</th>
+                        <th>REMARKS</th>
+                    </thead>
+                    <tbody id="allsub">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <div class="imgforgrades">
+                <p>*Attached Files.</p>
+                <a target="_blank" href="tupclogo.png">Grades_Img.jpg</a>
+            </div>
+
+            </div>
+
+        </form>
+
+        <form class="needs-validation" action="javascript:submitToAdmin();" novalidate>
+            <div class="submitbutton">
+                <button class="btn btn-primary" type="submit" id="submitbtn">Submit Requests</button>
+                <!--<input type="button" value="Submit" id="submitbtn" data-toggle="modal" data-target="#staticBackdrop">-->
+            </div>
+        </form>
+    </section>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    <script src="../signinlogin/js/bootstrap.bundle.min.js"></script>
+    <script src="js/checking.js"></script>
+</body>
+
+</html>
