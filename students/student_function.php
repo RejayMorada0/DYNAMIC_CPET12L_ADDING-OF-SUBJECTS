@@ -1,4 +1,6 @@
 <?php
+// Ajax Method
+
 
 function check_login($con)
 {

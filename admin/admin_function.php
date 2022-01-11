@@ -32,4 +32,24 @@ $result = $mysqli->query($sql);
 $mysqli->close(); 
 
 
+// source: https://stackoverflow.com/questions/20738329/how-to-call-a-php-function-on-the-click-of-a-button
+// ADD and REMOVE FUNCTION
+
+if(array_key_exists('removeAction', $_POST)) {
+    removeAction();
+}
+else if(array_key_exists('addAction', $_POST)) {
+    addAction();
+}
+function removeAction() {
+    echo "This is removeAction that is selected";
+}
+function addAction() {
+    echo "This is addAction that is selected";
+}
+
+
+
+
 ?>
+

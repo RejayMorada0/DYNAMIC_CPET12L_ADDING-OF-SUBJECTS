@@ -5,8 +5,8 @@ session_start();
 
     include("admin_function.php");
 
+?> 
 
-?>
 
 
 <!DOCTYPE html>
@@ -69,7 +69,7 @@ session_start();
             <p>SUBJECT OF BACHELOR OF ENGINEERING TECHNOLOGY Major in COMPUTER ENGINEERING TECHNOLOGY </p>
 
         </div>
-        <form class="needs-validation" name='listofsubs' novalidate>
+        <form class="needs-validation" method="post">
 
             <legend>Add or Remove Subject</legend>
 
@@ -100,8 +100,9 @@ session_start();
                 </div>
             </div>
             <div class="button1">
-                <input class="btn btn-primary" type="button" value="x remove subject" onClick="submitFunction(1)">
-                <input class="btn btn-primary" type="button" value="+ add subject" onClick="submitFunction(2)">
+            
+                <input class="btn btn-primary" type="submit" value="x remove subject" name="removeAction">
+                <input class="btn btn-primary" type="submit" value="+ add subject" name="addAction">
             </div>
         </form>
 
