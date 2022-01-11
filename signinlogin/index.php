@@ -1,3 +1,11 @@
+<?php 
+
+session_start();
+
+	include("connection.php");
+	include("login_function.php");
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -40,7 +48,7 @@
             </div>
 
             <div class="form-group">
-                <input type="password" class="form-control" name="password" id="password" minlength="5" placeholder="Password" required>
+                <input type="password" class="form-control" name="passw" id="password" minlength="5" placeholder="Password" required>
             </div>
         </div>
 

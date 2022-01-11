@@ -1,3 +1,13 @@
+<?php 
+
+session_start();
+
+	include("connection.php");
+	include("");
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -59,9 +69,9 @@
                     <label>Year Course and Section:</label>
                 </div>
                 <div class="data">
-                    <label id='studentnumber1'>TUPC-19-0001</label>
-                    <label id='fullname1'>JUAN DELA CRUZ</label>
-                    <label id='section1'>BET-COET-4B</label>
+                    <label id='studentnumber1'></label>
+                    <label id='fullname1'></label>
+                    <label id='section1'></label>
                 </div>
 
             </div>
@@ -71,7 +81,7 @@
                     <label>Status:</label>
                 </div>
                 <div class="statusCenter">
-                    <label id='status1'>PROCESSED</label>
+                    <label id='status1'></label>
                 </div>
                 <div class="statusCenter">
                     <a href="" target="_blank"> <i class="bi bi-download"></i> Download PDF</a>
