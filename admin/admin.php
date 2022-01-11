@@ -1,3 +1,15 @@
+
+<?php 
+
+session_start();
+
+	include("connection.php");
+    include("admin_function.php");
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,10 +50,10 @@
             <form class="d-flex">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html" id="allsubjects">All Subjects <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="admin.php" id="allsubjects">All Subjects <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="requestapproval.html" id="request">Request Approval</a>
+                        <a class="nav-link" href="requestapproval.php" id="request">Request Approval</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../signinlogin/index.php" id="logoutbutton">Logout</a>
