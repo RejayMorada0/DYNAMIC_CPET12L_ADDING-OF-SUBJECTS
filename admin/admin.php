@@ -75,17 +75,17 @@ session_start();
 
             <div class="form-row">
                 <div class="col-md-4 mb-3">
-                    <label for="validationTooltip01">Subject Code</label>
-                    <input type="text" class="form-control" id="validationTooltip01" required>
+                    <label for="sub_code">Subject Code</label>
+                    <input type="text" class="form-control" name="sub_code" id="sub_code">
 
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label for="validationTooltip02">Subject Name</label>
-                    <input type="text" class="form-control" id="validationTooltip02" required>
+                    <label for="sub_name">Subject Name</label>
+                    <input type="text" class="form-control" name="sub_name" id="sub_name">
                 </div>
                 <div class="col-md-4 mb-3">
-                    <label for="validationTooltip04">Year and Semester</label>
-                    <select class="custom-select" id="validationTooltip04" required>
+                    <label for="yr_and_sem">Year and Semester</label>
+                    <select class="custom-select" name="yr_and_sem">
                   <option selected disabled value="">Choose...</option>
                   <option value="FIRST YEAR - FIRST SEMESTER">First Year - First Sem</option>
                   <option value="FIRST YEAR - SECOND SEMESTER">First Year - Second Sem</option>
@@ -113,13 +113,13 @@ session_start();
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="validationTooltip03">Subject Code</label>
-                    <input type="text" class="form-control" id="validationTooltip03" required>
+                    <input type="text" class="form-control" id="validationTooltip04" required>
 
                 </div>
 
                 <div class="col-md-4 mb-3">
                     <label for="validationTooltip04">Offer Status</label>
-                    <select class="custom-select" id="validationTooltip04" required>
+                    <select class="custom-select" id="validationTooltip05" required>
                   <option selected disabled value="">Choose...</option>
                   <option value="Not Offer">Not Offer</option>
                   <option value="Offer">Offer</option>
