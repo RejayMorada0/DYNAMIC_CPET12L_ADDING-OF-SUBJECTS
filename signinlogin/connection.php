@@ -3,7 +3,7 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "student_accounts";
+$dbname = "adding_subjects_db";
 
 
 if(!$con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname))

@@ -3,7 +3,8 @@
 session_start();
 
 	include("connection.php");
-	include("");
+    include("student_function.php");
+	$user_data = check_login($con);
 
 ?>
 
@@ -69,9 +70,9 @@ session_start();
                     <label>Year Course and Section:</label>
                 </div>
                 <div class="data">
-                    <label id='studentnumber1'></label>
-                    <label id='fullname1'></label>
-                    <label id='section1'></label>
+                    <label id='studentnumber1'><?php echo $user_data['stud_id']; ?></label>
+                    <label id='fullname1'><?php echo $user_data['fn']; ?> <?php echo $user_data['ln']; ?></label>
+                    <label id='section1'><?php echo $user_data['section']; ?></label>
                 </div>
 
             </div>
@@ -81,7 +82,7 @@ session_start();
                     <label>Status:</label>
                 </div>
                 <div class="statusCenter">
-                    <label id='status1'></label>
+                    <label id='status1'><?php echo $user_data['stud_stats']; ?></label>
                 </div>
                 <div class="statusCenter">
                     <a href="" target="_blank"> <i class="bi bi-download"></i> Download PDF</a>

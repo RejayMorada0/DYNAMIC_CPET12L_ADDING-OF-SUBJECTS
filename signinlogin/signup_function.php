@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
         //save to database
         $stud_stats = "Processing";
-        $query = "insert into students (stud_id,fn,ln,section,email,passw,stud_stats) values ('$stud_id','$fn','$ln','$section','$email', '$passw', '$stud_stats')";
+        $query = "insert into student_accounts (stud_id,fn,ln,section,email,passw,stud_stats) values ('$stud_id','$fn','$ln','$section','$email', '$passw', '$stud_stats')";
 
         mysqli_query($con, $query);
 
