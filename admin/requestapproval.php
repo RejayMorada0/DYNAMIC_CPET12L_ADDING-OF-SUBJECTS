@@ -1,3 +1,23 @@
+<?php 
+
+session_start();
+
+    include("requestapproval_function.php");
+
+
+    // kapag nakapaglogout na hindi pwede mag click go back para maghold sa history
+    // para ito sa security sa data ng admin
+    if(!isset($_SESSION['email']))
+    {
+        // head to the nect page directory
+        $path = $_SERVER['SERVER_NAME'].'../../../signinlogin';
+        header("location: " . $path ."/index.php");
+        die;
+    }
+
+?> 
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,7 +65,7 @@
                         <a class="nav-link" href="requestapproval.php" id="request">Request Approval</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../signinlogin/index.php" id="logoutbutton">Logout</a>
+                        <a class="nav-link" href="logout.php" id="logoutbutton">Logout</a>
                     </li>
                 </ul>
 

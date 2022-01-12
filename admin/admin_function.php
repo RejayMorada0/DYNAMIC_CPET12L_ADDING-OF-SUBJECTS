@@ -236,6 +236,26 @@ function changeAction() {
 if (isset($_GET['action']) && $_GET['action'] == 'viewOffered') {
     //function to view offered subject in modalBody.innerHTML
 
+    // call the connections
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $dbname = "adding_subjects_db";
+    $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+
+    //error handling
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    //need to search
+    $offer_stats ="Offer";
+
+    // sql search the sub_code
+    $sql = "SELECT sub_code, sub_name FROM all_subjects WHERE offer_stats = '$offer_stats' limit 1";
+    $result = (mysqli_query($con, $sql));
+
 
 }
 

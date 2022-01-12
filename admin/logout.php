@@ -1,7 +1,15 @@
-<?php
-
-
+<?php 
 session_start();
-// unset($_SESSION['']);
-header("location:C:\xampp\htdocs\DYNAMIC_CPET12L_ADDING-OF-SUBJECTS\signinlogin\index.php")
+
+if(isset($_SESSION['email']))
+{
+	unset($_SESSION['email']);
+
+}
+
+// head to the nect page directory
+$path = $_SERVER['SERVER_NAME'].'../../../signinlogin';
+header("location: " . $path ."/index.php");
+die;
+
 ?>
