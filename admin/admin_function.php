@@ -66,11 +66,6 @@ function removeAction() {
             $del_result = "DELETE FROM `all_subjects` WHERE sub_code = '$sub_code'";
             $result = (mysqli_query($con, $del_result));
 
-            //reload the table
-            //$path = $_SERVER['SERVER_NAME'].'../../../admin';
-            //header("location: " . $path ."/admin.php");
-            //die;
-
             // Message
             function function_alert($message) {
                     
@@ -86,18 +81,22 @@ function removeAction() {
             $result = (mysqli_query($con, $sql));
             mysqli_close($con);
         }
+        else {
+            // Function definition
+            function function_alert1($message1) {
+                    
+                // Display the alert box 
+                echo "<script>alert('$message1');</script>";
+            }
+            // Function call
+            function_alert1("Subject does not exist.");
+            //mysqli_close($con);
+        }
+    }
+    else {
+        echo mysqli_connect_error();
     }
  
-    // Function definition
-    function function_alert1($message1) {
-            
-        // Display the alert box 
-        echo "<script>alert('$message1');</script>";
-    }
-    // Function call
-    function_alert1("Subject does not exist.");
-    //mysqli_close($con);
-
 }
 
 
