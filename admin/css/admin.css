@@ -151,7 +151,7 @@ section {
     width: 400px;
 }
 
-.offerbttn button {
+.offerbttn input {
     background-color: black;
     color: white;
     border: none;
@@ -160,7 +160,7 @@ section {
     padding-right: 40px;
 }
 
-.offerbttn button:hover {
+.offerbttn input:hover {
     background-color: white;
     color: black;
     border: solid 1px black;

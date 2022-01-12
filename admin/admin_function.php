@@ -39,6 +39,10 @@ if(array_key_exists('removeAction', $_POST)) {
 else if(array_key_exists('addAction', $_POST)) {
     addAction();
 }
+else if(array_key_exists('changeAction', $_POST)) {
+    changeAction();
+}
+
 function removeAction() {
 
     // call the connections
@@ -162,16 +166,79 @@ function addAction() {
     else 
     {
         // Function definition
-        function function_alert0($message1) {
+        function function_alert0($message0) {
                         
             // Display the alert box 
-            echo "<script>alert('$message1');</script>";
+            echo "<script>alert('$message0');</script>";
         }
         // Function call
         function_alert0("Complete all fields");
         //mysqli_close($con);
     }
 }
+
+
+function changeAction() {
+    // call the connections
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $dbname = "adding_subjects_db";
+    $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+
+    //error handling
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    //inputs was posted
+    $sub_code = $_POST['sub_code1'];
+    $offer_stats = filter_input(INPUT_POST, 'offer_stats', FILTER_SANITIZE_STRING);
+
+
+    // sql search the sub_code
+    $sql = "SELECT sub_code FROM all_subjects WHERE sub_code = '$sub_code' limit 1";
+    $result = (mysqli_query($con, $sql));
+
+    if ($result)
+        {
+            if($result && mysqli_num_rows($result) > 0)
+            {
+                $update_result = "UPDATE all_subjects SET offer_stats='$offer_stats' WHERE sub_code = '$sub_code'";
+                $result = (mysqli_query($con, $update_result));
+
+                // Message
+                function function_alert1($message1) {
+                        
+                    // Display the alert box 
+                    echo "<script>alert('$message1');</script>";
+                }
+                // Message call
+                function_alert1("Successfully updated the offer status"); 
+
+            }
+            else
+            {
+                // Function definition
+                function function_alert0($message0) {
+                                
+                    // Display the alert box 
+                    echo "<script>alert('$message0');</script>";
+                }
+                // Function call
+                function_alert0("Subject Code does not exist.");     
+            }
+        }
+
+}
+
+if (isset($_GET['action']) && $_GET['action'] == 'viewOffered') {
+    //function to view offered subject in modalBody.innerHTML
+
+
+}
+
 
 
 ?>

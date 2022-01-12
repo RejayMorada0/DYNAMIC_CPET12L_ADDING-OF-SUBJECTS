@@ -76,7 +76,7 @@ session_start();
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="sub_code">Subject Code</label>
-                    <input type="text" class="form-control" name="sub_code" id="sub_code">
+                    <input type="text" class="form-control" name="sub_code" id="sub_code" required>
 
                 </div>
                 <div class="col-md-4 mb-3">
@@ -107,19 +107,19 @@ session_start();
         </form>
 
 
-        <form class="needs-validation" name="updateOfferStatusform" action="javascript:updateOfferStatus();" novalidate>
+        <form class="needs-validation" method="post">
 
             <legend>Change Offer Status</legend>
             <div class="form-row">
                 <div class="col-md-4 mb-3">
-                    <label for="validationTooltip03">Subject Code</label>
-                    <input type="text" class="form-control" id="validationTooltip04" required>
+                    <label for="sub_code1">Subject Code</label>
+                    <input type="text" class="form-control" name="sub_code1" id="sub_code1" required>
 
                 </div>
 
                 <div class="col-md-4 mb-3">
-                    <label for="validationTooltip04">Offer Status</label>
-                    <select class="custom-select" id="validationTooltip05" required>
+                    <label for="offer_stats">Offer Status</label>
+                    <select class="custom-select" name="offer_stats" id="offer_stats" required>
                   <option selected disabled value="">Choose...</option>
                   <option value="Not Offer">Not Offer</option>
                   <option value="Offer">Offer</option>
@@ -127,8 +127,8 @@ session_start();
                 </div>
 
                 <div class="offerbttn">
-                    <button class="btn btn-primary" type="submit">Change Status</button>
-                    <a class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="color:black; background-color: white; border: 1px solid black;" onclick="showOffered()">View Offered</a>
+                    <input class="btn btn-primary" type="submit" value="Change Status" name="changeAction">
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="color:black; background-color: white; border: 1px solid black;" href="admin.php?action=viewOffered"">View Offered</a>
                 </div>
         </form>
 
