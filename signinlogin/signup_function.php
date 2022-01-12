@@ -24,16 +24,31 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
 
         mysqli_query($con, $query);
 
-        // head to the nect page directory
-        $path = $_SERVER['SERVER_NAME'].'../../../students';
-        header("location: " . $path ."/student.php");
+        // Function definition
+        function function_alert($message) {
+            
+            // Display the alert box 
+            echo "<script>alert('$message');</script>";
+        }
+        // Function call
+        function_alert("Successfully created account, but you need to login first.");
 
-        die;
+
+        // head to the nect page directory
+        $path = $_SERVER['SERVER_NAME'].'../../../signinlogin';
+        header("location: " . $path ."/index.php");
+        //die;
     }else
     {
         //error handling
-        echo "Please enter some valid information!";
-        
+        // Function definition
+        function function_alert1($message1) {
+            
+            // Display the alert box 
+            echo "<script>alert('$message1');</script>";
+        }
+        // Function call
+        function_alert1("Please enter some valid information!");
     }
 }
 

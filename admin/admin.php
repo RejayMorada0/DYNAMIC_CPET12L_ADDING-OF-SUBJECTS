@@ -85,7 +85,7 @@ session_start();
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="yr_and_sem">Year and Semester</label>
-                    <select class="custom-select" name="yr_and_sem">
+                    <select class="custom-select" name="yr_and_sem" id="yr_and_sem">
                   <option selected disabled value="">Choose...</option>
                   <option value="FIRST YEAR - FIRST SEMESTER">First Year - First Sem</option>
                   <option value="FIRST YEAR - SECOND SEMESTER">First Year - Second Sem</option>
