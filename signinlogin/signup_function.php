@@ -37,7 +37,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         // head to the nect page directory
         $path = $_SERVER['SERVER_NAME'].'../../../signinlogin';
         header("location: " . $path ."/index.php");
-        //die;
+        die;
     }else
     {
         //error handling

@@ -48,7 +48,7 @@ session_start();
             <form class="d-flex" id="logoutflex">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../signinlogin/index.php" id="logoutbutton">Logout</a>
+                        <a class="nav-link" href="../students/logout.php" id="logoutbutton">Logout</a>
                     </li>
                 </ul>
 
@@ -90,7 +90,7 @@ session_start();
             </div>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="../signinlogin/index.php" id="logoutbutton1">Logout</a>
+                    <a class="nav-link" href="../students/logout.php" id="logoutbutton1">Logout</a>
                 </li>
             </ul>
 
