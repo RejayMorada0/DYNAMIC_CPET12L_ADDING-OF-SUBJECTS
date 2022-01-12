@@ -7,6 +7,17 @@ session_start();
 	$user_data = check_login($con);
 
 
+    // kapag nakapaglogout na hindi pwede mag click go back para maghold sa history
+    // para ito sa security sa data ng estudyante
+    if(!isset($_SESSION['email']))
+    {
+        // head to the nect page directory
+        $path = $_SERVER['SERVER_NAME'].'../../../signinlogin';
+        header("location: " . $path ."/index.php");
+        die;
+    }
+    
+
 ?>
 
 
