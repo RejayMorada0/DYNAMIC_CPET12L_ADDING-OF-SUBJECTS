@@ -44,54 +44,55 @@ function removeAction() {
     $dbuser = "root";
     $dbpass = "";
     $dbname = "adding_subjects_db";
-    $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+    $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
-    // Checking for connections
-    if ($mysqli->connect_error) {
-        die('Connect Error (' . 
-        $mysqli->connect_errno . ') '. 
-        $mysqli->connect_error);
+
+    //error handling
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
     }
 
     //inputs was posted
     $sub_code = $_POST['sub_code'];
 
-    $query0 = "SELECT sub_code FROM all_subjects WHERE sub_code = '$sub_code'";
-    $result0 =$mysqli->query($query0);
+    // sql to delete a record
+    $sql = "SELECT sub_code FROM all_subjects WHERE sub_code = '$sub_code' limit 1";
+    $result = (mysqli_query($con, $sql));
 
-    if ($result0)
+    if ($result)
     {
-        $del_result = "DELETE FROM `all_subjects` WHERE sub_code = '$sub_code'";
-        $mysqli->query($del_result);
-        $mysqli->close();
-        
-       
-    }
-    else if (($result0) != ($sub_code)){
-        // Function definition
-        function function_alert1($message) {
-            
-            // Display the alert box 
-            echo "<script>alert('$message');</script>";
+        if($result && mysqli_num_rows($result) > 0){
+ 
+            $del_result = "DELETE FROM `all_subjects` WHERE sub_code = '$sub_code'";
+            (mysqli_query($con, $del_result));
+
+            //reload the table
+            $path = $_SERVER['SERVER_NAME'].'../../../admin';
+            header("location: " . $path ."/admin.php");
+            die;
+
+            // Message
+            function function_alert($message) {
+                    
+                // Display the alert box 
+                echo "<script>alert('$message');</script>";
+            }
+            // Message call
+            function_alert("Deleted");
         }
-        // Function call
-        function_alert1("Subject Code is not exist");
     }
-    else{
-        // Function definition
-        function function_alert2($message) {
+ 
+    // Function definition
+    function function_alert1($message1) {
             
-            // Display the alert box 
-            echo "<script>alert('$message');</script>";
-        }
-        // Function call
-        function_alert2("Subject Code is not exist");
+        // Display the alert box 
+        echo "<script>alert('$message1');</script>";
     }
-    
-   
+    // Function call
+    function_alert1("Error");
+    //mysqli_close($con);
 
 }
-
 
 
 
