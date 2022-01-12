@@ -64,12 +64,12 @@ function removeAction() {
         if($result && mysqli_num_rows($result) > 0){
  
             $del_result = "DELETE FROM `all_subjects` WHERE sub_code = '$sub_code'";
-            (mysqli_query($con, $del_result));
+            $result = (mysqli_query($con, $del_result));
 
             //reload the table
-            $path = $_SERVER['SERVER_NAME'].'../../../admin';
-            header("location: " . $path ."/admin.php");
-            die;
+            //$path = $_SERVER['SERVER_NAME'].'../../../admin';
+            //header("location: " . $path ."/admin.php");
+            //die;
 
             // Message
             function function_alert($message) {
@@ -79,6 +79,12 @@ function removeAction() {
             }
             // Message call
             function_alert("Deleted");
+
+
+            // SQL query to select data from database
+            $sql = "SELECT * FROM all_subjects ORDER BY yr_and_sem ASC ";
+            $result = (mysqli_query($con, $sql));
+            mysqli_close($con);
         }
     }
  
@@ -89,7 +95,7 @@ function removeAction() {
         echo "<script>alert('$message1');</script>";
     }
     // Function call
-    function_alert1("Error");
+    function_alert1("Subject does not exist.");
     //mysqli_close($con);
 
 }
