@@ -20,4 +20,4 @@ function check_login($con)
 		}
 	}
 
-}
+}?>
