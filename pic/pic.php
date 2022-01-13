@@ -130,7 +130,7 @@ session_start();
             $(document).ready (function () {
                     var updater = setTimeout (function () {
                         $('body#ajax_func').load ('pic.php', 'update=true');
-                    }, 100);
+                    }, 10000);
                 });
 
 

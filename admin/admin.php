@@ -231,7 +231,7 @@ session_start();
     $(document).ready (function () {
         var updater = setTimeout (function () {
             $('body#ajax_func').load ('admin.php', 'update=true');
-            $('nav#tupcnav').load ('admin.php', 'update=false');
+            
         }, 10000);
     });
 
