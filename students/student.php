@@ -50,7 +50,7 @@ session_start();
 
 </head>
 
-<body onresize="openpage()">
+<body onresize="openpage()" id="ajax_func">
     <nav class="navbar navbar-expand-lg" id="tupcnav">
         <img src="../signinlogin/images/tuplogo.png" width="50" height="50" alt="tuplogo">
         <a class="navbar-brand" href="index.html" id="atech">TECHNOLOGICAL UNIVERSITY <br> OF THE PHILIPPINES</a>
@@ -181,7 +181,12 @@ session_start();
     <script src="../signinlogin/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-    <script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+
         function openpage() {
             var x = document.getElementById("section");
             if (window.innerWidth > 1000) {
@@ -197,6 +202,13 @@ session_start();
                 x.style.display = "none";
             }
         }
+
+        $(document).ready (function () {
+            var updater = setTimeout (function () {
+                $('body#ajax_func').load ('student.php', 'update=true');
+            }, 100);
+        });
+
     </script>
 
 </body>
