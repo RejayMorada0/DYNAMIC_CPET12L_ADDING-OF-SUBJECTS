@@ -54,7 +54,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                     $_SESSION['email'] = $user_data['email'];
                     // head to the nect page directory
                     $path = $_SERVER['SERVER_NAME'].'../../../pic';
-                    header("location: " . $path ."/pic.php");
+                    header("location: " . $path ."/index.php");
                     die;
                 }
             }

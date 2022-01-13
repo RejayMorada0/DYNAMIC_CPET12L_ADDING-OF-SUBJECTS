@@ -170,6 +170,8 @@ session_start();
                     <?php
                         }
                     ?>
+
+
                 </tbody>
 
             </table>
@@ -231,8 +233,7 @@ session_start();
     $(document).ready (function () {
         var updater = setTimeout (function () {
             $('body#ajax_func').load ('admin.php', 'update=true');
-            
-        }, 10000);
+        }, 100);
     });
 
 

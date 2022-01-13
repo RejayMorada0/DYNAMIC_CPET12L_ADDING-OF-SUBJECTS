@@ -206,7 +206,7 @@ session_start();
         $(document).ready (function () {
             var updater = setTimeout (function () {
                 $('body#ajax_func').load ('student.php', 'update=true');
-            }, 100);
+            }, 1000);
         });
 
     </script>
