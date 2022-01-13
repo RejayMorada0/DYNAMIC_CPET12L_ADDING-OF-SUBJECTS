@@ -23,11 +23,22 @@ if ($mysqli->connect_error) {
     $mysqli->connect_errno . ') '. 
     $mysqli->connect_error);
 }
-  
+
+//View All Subjects In Table
 // SQL query to select data from database
 $sql = "SELECT * FROM all_subjects ORDER BY yr_and_sem ASC ";
 $result = $mysqli->query($sql);
-$mysqli->close(); 
+
+
+
+// View Offer Subjects in modalBody
+//need to search
+$offer_stats ="Offer";
+
+// SQL query to select data from database
+$sql1 = "SELECT * FROM all_subjects WHERE offer_stats = '$offer_stats' ORDER BY yr_and_sem ASC ";
+$offer_result = $mysqli->query($sql1);
+$mysqli->close();
 
 
 // source: https://stackoverflow.com/questions/20738329/how-to-call-a-php-function-on-the-click-of-a-button
@@ -232,33 +243,6 @@ function changeAction() {
         }
 
 }
-
-if (isset($_GET['action']) && $_GET['action'] == 'viewOffered') {
-    //function to view offered subject in modalBody.innerHTML
-
-    // call the connections
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "";
-    $dbname = "adding_subjects_db";
-    $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-
-
-    //error handling
-    if (!$con) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-
-    //need to search
-    $offer_stats ="Offer";
-
-    // sql search the sub_code
-    $sql = "SELECT sub_code, sub_name FROM all_subjects WHERE offer_stats = '$offer_stats' limit 1";
-    $result = (mysqli_query($con, $sql));
-
-
-}
-
 
 
 ?>

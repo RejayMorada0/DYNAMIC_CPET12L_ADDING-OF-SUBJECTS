@@ -138,7 +138,7 @@ session_start();
 
                 <div class="offerbttn">
                     <input class="btn btn-primary" type="submit" value="Change Status" name="changeAction">
-                    <a class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="color:black; background-color: white; border: 1px solid black;" href="admin.php?action=viewOffered"">View Offered</a>
+                    <a class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="color:black; background-color: white; border: 1px solid black;">View Offered</a>
                 </div>
         </form>
 
@@ -191,9 +191,24 @@ session_start();
   </button>
                         </div>
                         <div class="modal-body">
-                            <ol type="1" id="modalBody"></ol>
+                            <ol type="1" id="modalBody">
+                            <!-- PHP CODE TO FETCH DATA FROM ROWS-->
+                            <?php   // LOOP TILL END OF DATA 
+                                while($rows=$offer_result->fetch_assoc())
+                                {
+                            ?>
+                                <!--FETCHING DATA FROM EACH 
+                                    ROW OF EVERY COLUMN-->
+                                <li><?php echo $rows['sub_code'];?> <?php echo $rows['sub_name'];?></li>          
+                         
+                            <?php
+                                }
+                            ?>
+                            </ol>
 
                         </div>
+
+                        
 
                     </div>
                 </div>
@@ -220,6 +235,7 @@ session_start();
             $('body#ajax_func').load ('admin.php', 'update=true');
         }, 100);
     });
+
 
     </script>
 
