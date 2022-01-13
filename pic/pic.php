@@ -59,10 +59,10 @@ session_start();
                 <form class="d-flex">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html" id="requests">Request</a>
+                            <a class="nav-link" href="pic.php" id="requests">Request</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="studentrecords.html" id="studentrecords">Student Records</a>
+                            <a class="nav-link" href="studentrecords.php" id="studentrecords">Student Records</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="logout.php" id="logoutbutton">Logout</a>
