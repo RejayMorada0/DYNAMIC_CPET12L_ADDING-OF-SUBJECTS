@@ -29,6 +29,16 @@ if ($mysqli->connect_error) {
 $sql = "SELECT * FROM all_subjects ORDER BY yr_and_sem ASC ";
 $result = $mysqli->query($sql);
 
+// cycycycyc
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        alert("Hello World");
+    }
+} else {
+    echo "0 results";
+}
+      
+
 
 
 // View Offer Subjects in modalBody
