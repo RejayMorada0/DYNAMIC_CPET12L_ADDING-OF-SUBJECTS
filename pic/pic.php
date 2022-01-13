@@ -133,6 +133,20 @@ session_start();
                     }, 100);
                 });
 
+
+            function getDataFromCurrentCell(e) {
+
+                var currow = (e.target.parentNode.innerText); //Current row.
+                // whole cell;
+                var postTitle = event.target.parentNode.parentNode.childNodes[1].textContent;
+                var stud_id = e.target.parentNode.childNodes[0].textContent;
+                alert(postTitle)
+                // set student details from student cell to transfet on checking page
+                localStorage.setItem("stud_id", stud_id);
+            
+                document.location = 'checking.php'
+            }
+
         </script>
     </body>
 

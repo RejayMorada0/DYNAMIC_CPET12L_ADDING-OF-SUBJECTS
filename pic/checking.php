@@ -2,7 +2,7 @@
 
 session_start();
 
-    //include("checking_function.php");
+    include("checking_function.php");
 
 
     // kapag nakapaglogout na hindi pwede mag click go back para maghold sa history
@@ -68,11 +68,20 @@ session_start();
     <section id="offered">
         <div class="offered">
             <p>Offered Subjects:</p>
-
-            <label>BET1-C</label>
-            <label>CHEMGEN-C</label>
-            <label>CPET 1L-C</label>
-            <label>BET1-C</label>
+                <ol type="1" id="modalBody">
+                    <!-- PHP CODE TO FETCH DATA FROM ROWS-->
+                    <?php   // LOOP TILL END OF DATA 
+                        while($rows=$offer_result->fetch_assoc())
+                        {
+                    ?>
+                        <!--FETCHING DATA FROM EACH 
+                            ROW OF EVERY COLUMN-->
+                        <li><?php echo $rows['sub_code'];?> <?php echo $rows['sub_name'];?></li>          
+                    
+                    <?php
+                        }
+                    ?>
+                </ol>
         </div>
         <a class="nav-link" href="index.html" id="cancelbutton1">Cancel</a>
     </section>
@@ -112,7 +121,6 @@ session_start();
 
 
         <form>
-
 
             <div class="tableborder">
                 <table>
@@ -174,8 +182,11 @@ session_start();
             } else {
                 x.style.display = "none";
             }
-
         }
+
+        // get student email from student cell in index page
+        var a = localStorage.getItem("stud_id");
+        document.getElementById("studentname").innerHTML = "Student:" + " " + a;
     </script>
 </body>
 
