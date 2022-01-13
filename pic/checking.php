@@ -122,7 +122,6 @@ session_start();
 
         <form>
 
-
             <div class="tableborder">
                 <table>
                     <legend>ALL YEAR - ALL SEMESTER</legend>
@@ -183,8 +182,11 @@ session_start();
             } else {
                 x.style.display = "none";
             }
-
         }
+
+        // get student email from student cell in index page
+        var a = localStorage.getItem("stud_id");
+        document.getElementById("studentname").innerHTML = "Student:" + " " + a;
     </script>
 </body>
 
