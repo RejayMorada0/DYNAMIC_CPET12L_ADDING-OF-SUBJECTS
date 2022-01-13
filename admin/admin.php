@@ -170,8 +170,6 @@ session_start();
                     <?php
                         }
                     ?>
-
-
                 </tbody>
 
             </table>

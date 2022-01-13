@@ -1,3 +1,23 @@
+<?php 
+
+session_start();
+
+    //include("studentrecords_function.php");
+
+
+    // kapag nakapaglogout na hindi pwede mag click go back para maghold sa history
+    // para ito sa security sa data ng pic
+    if(!isset($_SESSION['email']))
+    {
+        // head to the nect page directory
+        $path = $_SERVER['SERVER_NAME'].'../../../signinlogin';
+        header("location: " . $path ."/index.php");
+        die;
+    }
+
+?> 
+
+
 <!doctype html>
 <html lang="en">
 
@@ -13,7 +33,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="../signinlogin/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/fonts.css">
-    <link rel="stylesheet" href="css/requests.css">
+    <link rel="stylesheet" href="css/studentrecords.css">
 
     <!--ICONS-->
     <link rel="icon" href="images/tuplogo.png">
@@ -46,46 +66,43 @@
                             <a class="nav-link" href="studentrecords.html" id="studentrecords">Student Records</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../signinlogin/index.php" id="logoutbutton">Logout</a>
+                            <a class="nav-link" href="logout.php" id="logoutbutton">Logout</a>
                         </li>
                     </ul>
-
-
                 </form>
             </div>
         </nav>
+
         <section>
-            <div class="welcome">
-                WELCOME, PERSON IN CHARGE!
+            <div class="titlepage">
+                STUDENT RECORDS
             </div>
-
-            <div class="requesttxt">
-                <p>REQUESTS:</p>
-            </div>
-
-
 
             <div class="tableborder">
                 <table>
+                    <!--HEAD-->
                     <thead>
                         <tr>
-                            <th>Email</th>
+                            <th>Request ID</th>
                             <th>Student Number</th>
                             <th>Student Name</th>
+                            <th>Request Subjects</th>
                             <th>Status</th>
                         </tr>
                     </thead>
-                    <tbody id=picstudenttable onclick="getDataFromCurrentCell(event)" border="1">
-                        <!-- <tbody id=picstudenttable onclick="document.location='checking.html'"> -->
+                    <tbody id=submitreqtable>
 
                     </tbody>
                 </table>
             </div>
+
         </section>
+
+
 
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
-        <script src="js/index.js"></script>
+        <script src="../signinlogin/js/bootstrap.bundle.min.js"></script>
     </body>
 
 </html>
