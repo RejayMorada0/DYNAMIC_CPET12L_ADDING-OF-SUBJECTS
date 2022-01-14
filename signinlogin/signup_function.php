@@ -1,6 +1,4 @@
 
-
-
 <?php
 //FUNCTIONS FOR CREATE ACCOUNTS
 if($_SERVER['REQUEST_METHOD'] == "POST")
@@ -40,19 +38,19 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
        
         $get_sub_code = "SELECT * FROM all_subjects ORDER BY yr_and_sem ASC";
         $result = (mysqli_query($con, $get_sub_code));
-        $subject_data = mysqli_fetch_assoc($result);
-
         //$trans_id = rand(1, 3);
-        $sub_code = $subject_data['sub_code'];
-        $sub_name= $subject_data['sub_name'];
+     
         $grades = "";
         $remarks = "";
+
         while($rows=$result->fetch_assoc())
-        {
+        {   
+            $sub_code = $rows['sub_code'];
+            $sub_name= $rows['sub_name'];
             $add_result = "INSERT INTO student_request (stud_id, sub_code, sub_name, grades, remarks) VALUES ('$stud_id','$sub_code','$sub_name', '$grades','$remarks')";
             $result1 = (mysqli_query($con, $add_result));
         }
-
+       
 
 
 
