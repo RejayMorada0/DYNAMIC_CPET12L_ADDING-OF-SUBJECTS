@@ -124,7 +124,7 @@ session_start();
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="validationTooltip02">Select Grade Here</label>
-                        <input type="number" name= "grade" class="form-control" id="validationTooltip02" step=0.01 required>
+                        <input type="number" name= "grades" class="form-control" id="validationTooltip02" step=0.01 required>
                     </div>
 
                     <div class="gradebutton">

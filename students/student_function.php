@@ -69,7 +69,7 @@ function updateAction() {
     //input was posted
     //$stud_id = $user_data['stud_id'];
 	$sub_code = $_POST['sub_code'];
-	$grade = $_POST['grade'];
+	$grades = $_POST['grades'];
 
 
     // sql to update a record
