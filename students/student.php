@@ -115,21 +115,21 @@ session_start();
         </div>
 
         <div>
-            <form class="needs-validation" name="add_grades" action="javascript:addGrades();">
+            <form class="needs-validation" method="post">
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <label for="validationTooltip01">Subject Code</label>
-                        <input type="text" class="form-control" id="validationTooltip01" required>
+                        <input type="text" name= "sub_code" class="form-control" id="validationTooltip01" required>
 
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="validationTooltip02">Select Grade Here</label>
-                        <input type="number" class="form-control" id="validationTooltip02" step=0.01 required>
+                        <input type="number" name= "grade" class="form-control" id="validationTooltip02" step=0.01 required>
                     </div>
 
                     <div class="gradebutton">
-                        <input class="btn btn-primary" type="submit" value="Update Grade" id="updategrade">
-                        <!--<button class="btn btn-primary" type="submit">Submit</button>-->
+                        <input class="btn btn-primary" type="submit" value="Update Grade" id="updategrade"  name="updateAction">
+
                     </div>
             </form>
             </div>
