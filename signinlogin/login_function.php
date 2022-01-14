@@ -64,12 +64,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         {
             if($result2 && mysqli_num_rows($result2) > 0)
             {
-
                 $user_data = mysqli_fetch_assoc($result2);
                 
                 if($user_data['passw'] === $passw)
                 {
-
                     $_SESSION['email'] = $user_data['email'];
                     // head to the nect page directory
                     $path = $_SERVER['SERVER_NAME'].'../../../admin';

@@ -17,7 +17,6 @@ session_start();
         die;
     }
     
-
 ?>
 
 
@@ -147,7 +146,6 @@ session_start();
                             <thead>
                                 <th>SUBJECT CODE</th>
                                 <th>SUBJECT NAME</th>
-                                <th>YEAR AND SEMESTER</th>
                                 <th>GRADES</th>
                             </thead>
                             <tbody id="fyfs">
