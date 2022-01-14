@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2022 at 08:47 AM
+-- Generation Time: Jan 14, 2022 at 12:00 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -73,7 +73,7 @@ CREATE TABLE `all_subjects` (
 INSERT INTO `all_subjects` (`sub_code`, `sub_name`, `yr_and_sem`, `offer_stats`) VALUES
 ('BET1-C', 'Orientation to BET, Seminars and Field Trips', 'FIRST YEAR - FIRST SEMESTER', 'Offer'),
 ('CAD-C', 'Computer Aided Drafting', 'SECOND YEAR - FIRST SEMESTER', 'Not Offer'),
-('CHEMGEN-C', 'General Chemistry (Lec)', 'FIRST YEAR - FIRST SEMESTER', 'Not Offer'),
+('CHEMGEN-C', 'General Chemistry (Lec)', 'FIRST YEAR - FIRST SEMESTER', 'Offer'),
 ('CHEMGENL-C', 'General Chemistry (Lab)', 'FIRST YEAR - FIRST SEMESTER', 'Not Offer'),
 ('CHET-C', 'Chemistry for Engineering Technologists', 'SECOND YEAR - SECOND SEMESTER', 'Not Offer'),
 ('CHETL-C', 'Chemistry for Engineering Technologists(Lab)', 'SECOND YEAR - SECOND SEMESTER', 'Not Offer'),
@@ -86,7 +86,7 @@ INSERT INTO `all_subjects` (`sub_code`, `sub_name`, `yr_and_sem`, `offer_stats`)
 ('CPET6L-C', 'Introduction to Hardware Description Language', 'FOURTH YEAR - SECOND SEMESTER', 'Not Offer'),
 ('EST1-C', 'Electronics 1(Lec)', 'SECOND YEAR - SECOND SEMESTER', 'Not Offer'),
 ('EST1L-C', 'Electronics 1 Lab', 'THIRD YEAR - FIRST SEMESTER', 'Not Offer'),
-('ET1-C', 'Electrical Circuits (Lec)', 'FIRST YEAR - SECOND SEMESTER', 'Not Offer'),
+('ET1-C', 'Electrical Circuits (Lec)', 'FIRST YEAR - SECOND SEMESTER', 'Offer'),
 ('ET1L-C', 'Electrical Circuits (Lab)', 'FIRST YEAR - SECOND SEMESTER', 'Not Offer'),
 ('GEC1-C', 'Understanding the Self', 'FIRST YEAR - SECOND SEMESTER', 'Not Offer'),
 ('GEC2-C', 'Readings in Philippine History', 'THIRD YEAR - SECOND SEMESTER', 'Not Offer'),
@@ -138,14 +138,6 @@ CREATE TABLE `student_accounts` (
   `stud_stats` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `student_accounts`
---
-
-INSERT INTO `student_accounts` (`stud_id`, `fn`, `ln`, `section`, `email`, `passw`, `stud_stats`) VALUES
-('TUPC-19-0001', 'Rejay', 'Morada', 'BET-COET-S-1A', 'rejaymorada0@gmail.com', 'rejay', 'Processing'),
-('TUPC_19-0002', 'Lalisa', 'Manoban', 'BET-COET-S-1A', 'email1@gmail.com', 'password1', 'Processing');
-
 -- --------------------------------------------------------
 
 --
@@ -157,6 +149,7 @@ CREATE TABLE `student_request` (
   `stud_id` varchar(100) NOT NULL,
   `sub_code` varchar(100) NOT NULL,
   `sub_name` varchar(100) NOT NULL,
+  `yr_and_sem` varchar(100) NOT NULL,
   `grades` float NOT NULL,
   `remarks` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -205,6 +198,16 @@ ALTER TABLE `student_accounts`
 --
 ALTER TABLE `student_request`
   ADD PRIMARY KEY (`trans_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `student_request`
+--
+ALTER TABLE `student_request`
+  MODIFY `trans_id` bigint(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1302;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
