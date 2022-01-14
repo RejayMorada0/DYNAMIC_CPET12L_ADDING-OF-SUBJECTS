@@ -47,13 +47,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         {   
             $sub_code = $rows['sub_code'];
             $sub_name= $rows['sub_name'];
-            $add_result = "INSERT INTO student_request (stud_id, sub_code, sub_name, grades, remarks) VALUES ('$stud_id','$sub_code','$sub_name', '$grades','$remarks')";
+            $yr_and_sem= $rows['yr_and_sem'];
+            $add_result = "INSERT INTO student_request (stud_id, sub_code, sub_name, yr_and_sem, grades, remarks) VALUES ('$stud_id','$sub_code','$sub_name', '$yr_and_sem', '$grades','$remarks')";
             $result1 = (mysqli_query($con, $add_result));
         }
        
-
-
-
 
         // Function definition
         function function_alert($message) {

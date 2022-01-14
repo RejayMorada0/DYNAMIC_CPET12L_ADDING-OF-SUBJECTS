@@ -149,7 +149,21 @@ session_start();
                                 <th>GRADES</th>
                             </thead>
                             <tbody id="fyfs">
-
+                                <!-- PHP CODE TO FETCH DATA FROM ROWS-->
+                                <?php   // LOOP TILL END OF DATA 
+                                    while($rows=$display_student_req->fetch_assoc())
+                                    {
+                                ?>
+                                <tr>
+                                    <!--FETCHING DATA FROM EACH 
+                                        ROW OF EVERY COLUMN-->
+                                    <td><?php echo $rows['sub_code'];?></td>
+                                    <td><?php echo $rows['sub_name'];?></td>
+                                    <td><?php echo $rows['grades'];?></td>
+                                </tr>
+                                <?php
+                                    }
+                                ?>
                             </tbody>
 
                         </table>
