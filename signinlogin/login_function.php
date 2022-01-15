@@ -34,7 +34,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                 {
 
                     $_SESSION['email'] = $user_data['email'];
-                    //$_SESSION['hello'] = $user_data['stud_id'];
                     // head to the nect page directory
                     $path = $_SERVER['SERVER_NAME'].'../../../students';
                     header("location: " . $path ."/student.php");
