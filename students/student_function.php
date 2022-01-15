@@ -21,6 +21,8 @@ function check_login($con)
 }
 
 
+
+
 // Server is localhost
 $dbhost = "localhost";
 
@@ -39,6 +41,7 @@ if ($mysqli->connect_error) {
     $mysqli->connect_errno . ') '. 
     $mysqli->connect_error);
 }
+
 
 //View Student Requests In Table
 // SQL query to select data from database
@@ -66,21 +69,27 @@ function updateAction() {
         die("Connection failed: " . mysqli_connect_error());
     }
 
+    
+    // Call student id
+    $email = $_SESSION['email'];
+    $stud_sql = "SELECT stud_id FROM student_accounts WHERE email ='$email' ";
+    $stud_sql_result = mysqli_query($con, $stud_sql);
+    $user_data = mysqli_fetch_assoc($stud_sql_result);
     //input was posted
-    //$stud_id = $user_data['stud_id'];
+    $stud_id = $user_data['stud_id'];
 	$sub_code = $_POST['sub_code'];
 	$grades = $_POST['grades'];
 
 
-    // sql to update a record
-    $sql = "SELECT sub_code FROM all_subjects WHERE sub_code = '$sub_code' limit 1";
+    // sql to update the record subject of the student in database
+    $sql = "SELECT sub_code FROM student_request WHERE stud_id ='$stud_id' limit 1";
     $result = (mysqli_query($con, $sql));
 
     if ($result)
     {
         if($result && mysqli_num_rows($result) > 0){
  
-            $update_result = "UPDATE `student_request` SET grades = '$grades' WHERE sub_code = '$sub_code'";
+            $update_result = "UPDATE `student_request` SET grades = '$grades' WHERE sub_code = '$sub_code' ";
             $result = (mysqli_query($con, $update_result));
 
             // Message
