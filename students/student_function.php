@@ -75,6 +75,8 @@ function updateAction() {
     $stud_sql = "SELECT stud_id FROM student_accounts WHERE email ='$email' ";
     $stud_sql_result = mysqli_query($con, $stud_sql);
     $user_data = mysqli_fetch_assoc($stud_sql_result);
+
+    
     //input was posted
     $stud_id = $user_data['stud_id'];
 	$sub_code = $_POST['sub_code'];
