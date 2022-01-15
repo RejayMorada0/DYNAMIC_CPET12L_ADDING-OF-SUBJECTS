@@ -26,15 +26,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
             {
                 $user_data = mysqli_fetch_assoc($result);
 
-                if( ($user_data['stud_id'] === $stud_id) || ($user_data['email'] === $email))
+                if ($user_data['stud_id'] === $stud_id) 
                 {
-                    function function_alert1($message1) {
+                    function function_alert2($message1) {
             
                         // Display the alert box 
                         echo "<script>alert('$message1');</script>";
                     }
                     // Function call
-                    function_alert1("Student ID already exist!");
+                    function_alert2("Student ID already exist!");
                 }
             }
             else 
