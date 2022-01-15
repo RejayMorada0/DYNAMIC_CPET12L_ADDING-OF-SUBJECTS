@@ -103,8 +103,10 @@ session_start();
                     <label for="validationTooltip02">Remarks</label>
                     <select class="custom-select" id="validationTooltip02" required>
                   <option selected disabled value="">Choose...</option>
-                  <option value="Failed">Failed</option>
                   <option value="Passed">Passed</option>
+                  <option value="Failed">Failed</option>
+                  <option value="To Offer">To Offer</option>
+                  
                 </select>
                 </div>
 
