@@ -147,8 +147,9 @@ session_start();
             localStorage.setItem("stud_id", stud_id);
             localStorage.setItem("fn_ln", fn_ln);
 
-            
-            document.location = 'checking.php';
+          
+        
+            location = 'checking.php';
             });
 
         </script>

@@ -83,7 +83,7 @@ session_start();
                     ?>
                 </ol>
         </div>
-        <a class="nav-link" href="index.html" id="cancelbutton1">Cancel</a>
+        <a class="nav-link" href="pic.php" id="cancelbutton1">Cancel</a>
     </section>
 
 
