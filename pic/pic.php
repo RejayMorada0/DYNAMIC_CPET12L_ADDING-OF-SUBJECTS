@@ -134,12 +134,20 @@ session_start();
                 });
 
             // Functions to get data on onclick php and html table
+            // source: https://stackoverflow.com/questions/40559551/how-to-retrieve-row-from-a-html-table-on-mouse-click-in-php
             $("tr").click(function() {
 
             var id = $(this).find('.item-id').text();
             var name = $(this).find('.item-name').text();
 
-            alert( $.trim(id) + " : " + $.trim(name));
+            //alert( $.trim(id) + " : " + $.trim(name));
+
+            var stud_id = $.trim(id)
+            var fn_ln = $.trim(name)
+            localStorage.setItem("stud_id", stud_id);
+            localStorage.setItem("fn_ln", fn_ln);
+
+            document.location = 'checking.php'
             });
 
         </script>

@@ -188,7 +188,8 @@ session_start();
 
         // get student email from student cell in index page
         var a = localStorage.getItem("stud_id");
-        document.getElementById("studentname").innerHTML = "Student:" + " " + a;
+        var b = localStorage.getItem("fn_ln");
+        document.getElementById("studentname").innerHTML = "Student:" + " " + a + " " + b;
     </script>
 </body>
 
