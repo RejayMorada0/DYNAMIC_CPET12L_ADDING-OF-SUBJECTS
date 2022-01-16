@@ -207,7 +207,7 @@ session_start();
         $(document).ready (function () {
                     var updater = setTimeout (function () {
                         $('body#ajax_func').load ('checking.php', 'update=true');
-                    }, 1000);
+                    }, 10);
                 });
 
         // get student email from student cell in index page
