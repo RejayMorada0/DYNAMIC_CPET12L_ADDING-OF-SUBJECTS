@@ -41,7 +41,7 @@ session_start();
 
 </head>
 
-<body onresize="openpage()">
+<body onresize="openpage()" id="ajax_func">
     <nav class="navbar navbar-expand-lg" id="tupcnav">
         <img src="../signinlogin/images/tuplogo.png" width="50" height="50" alt="tuplogo">
 
@@ -202,6 +202,12 @@ session_start();
             }
         }
 
+        $(document).ready (function () {
+                    var updater = setTimeout (function () {
+                        $('body#ajax_func').load ('checking.php', 'update=true');
+                    }, 1000);
+                });
+
         // get student email from student cell in index page
         var a = localStorage.getItem("stud_id");
         var b = localStorage.getItem("fn_ln");
@@ -209,7 +215,7 @@ session_start();
 
         //trancfer js var in php var
         document.cookie = "stud_id = " + a ;
-        
+      
     </script>
 </body>
 

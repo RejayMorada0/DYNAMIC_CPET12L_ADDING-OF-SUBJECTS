@@ -130,7 +130,7 @@ session_start();
             $(document).ready (function () {
                     var updater = setTimeout (function () {
                         $('body#ajax_func').load ('pic.php', 'update=true');
-                    }, 10000);
+                    }, 1000);
                 });
 
             // Functions to get data on onclick php and html table
@@ -147,6 +147,7 @@ session_start();
             localStorage.setItem("stud_id", stud_id);
             localStorage.setItem("fn_ln", fn_ln);
 
+            
             document.location = 'checking.php';
             });
 
