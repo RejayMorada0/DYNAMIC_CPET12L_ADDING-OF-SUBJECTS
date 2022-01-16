@@ -45,7 +45,7 @@ session_start();
 
         <nav class="navbar navbar-expand-lg" id="tupcnav">
             <img src="images/tuplogo.png" width="50" height="50" alt="tuplogo">
-            <a class="navbar-brand" href="index.html" id="atech">TECHNOLOGICAL UNIVERSITY <br> OF THE PHILIPPINES</a>
+            <a class="navbar-brand" href="pic.php" id="atech">TECHNOLOGICAL UNIVERSITY <br> OF THE PHILIPPINES</a>
 
             <nav class="navbar">
                 <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -147,7 +147,7 @@ session_start();
             localStorage.setItem("stud_id", stud_id);
             localStorage.setItem("fn_ln", fn_ln);
 
-            document.location = 'checking.php'
+            document.location = 'checking.php';
             });
 
         </script>

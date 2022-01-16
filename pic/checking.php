@@ -45,7 +45,7 @@ session_start();
     <nav class="navbar navbar-expand-lg" id="tupcnav">
         <img src="../signinlogin/images/tuplogo.png" width="50" height="50" alt="tuplogo">
 
-        <a class="navbar-brand" href="index.html" id="atech">TECHNOLOGICAL UNIVERSITY <br> OF THE PHILIPPINES</a>
+        <a class="navbar-brand" href="pic.php" id="atech">TECHNOLOGICAL UNIVERSITY <br> OF THE PHILIPPINES</a>
 
         <form class="d-flex" id="cancelnav">
             <ul class="navbar-nav mr-auto" id="ulid">
@@ -134,8 +134,8 @@ session_start();
                         <th>REMARKS</th>
                     </thead>
                     <tbody id="allsub">
-                         <!-- PHP CODE TO FETCH DATA FROM ROWS-->
-                         <?php   // LOOP TILL END OF DATA 
+                        <!-- PHP CODE TO FETCH DATA FROM ROWS-->
+                        <?php   // LOOP TILL END OF DATA 
                             while($rows=$student_grades_result->fetch_assoc())
                             {
                         ?>
@@ -143,10 +143,10 @@ session_start();
                         <tr>
                             <!--FETCHING DATA FROM EACH 
                                 ROW OF EVERY COLUMN-->
-                                <td><?php echo $rows['sub_code'];?></td>
-                                <td><?php echo $rows['sub_name'];?></td>
-                                <td><?php echo $rows['grades'];?></td>
-                                <td><?php echo $rows['remarks'];?></td>
+                            <td><?php echo $rows['sub_code'];?></td>
+                            <td><?php echo $rows['sub_name'];?></td>
+                            <td><?php echo $rows['grades'];?></td>
+                            <td><?php echo $rows['remarks'];?></td>
                         </tr>
 
                         <?php

@@ -52,7 +52,7 @@ session_start();
 <body onresize="openpage()" id="ajax_func">
     <nav class="navbar navbar-expand-lg" id="tupcnav">
         <img src="../signinlogin/images/tuplogo.png" width="50" height="50" alt="tuplogo">
-        <a class="navbar-brand" href="index.html" id="atech">TECHNOLOGICAL UNIVERSITY <br> OF THE PHILIPPINES</a>
+        <a class="navbar-brand" href="student.php" id="atech">TECHNOLOGICAL UNIVERSITY <br> OF THE PHILIPPINES</a>
 
         <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
 

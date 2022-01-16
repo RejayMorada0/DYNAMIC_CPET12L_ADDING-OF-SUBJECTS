@@ -2,7 +2,7 @@
 
 session_start();
 
-    //include("studentrecords_function.php");
+    include("studentrecords_function.php");
 
 
     // kapag nakapaglogout na hindi pwede mag click go back para maghold sa history
@@ -46,7 +46,7 @@ session_start();
 
         <nav class="navbar navbar-expand-lg" id="tupcnav">
             <img src="images/tuplogo.png" width="50" height="50" alt="tuplogo">
-            <a class="navbar-brand" href="index.html" id="atech">TECHNOLOGICAL UNIVERSITY <br> OF THE PHILIPPINES</a>
+            <a class="navbar-brand" href="pic.php" id="atech">TECHNOLOGICAL UNIVERSITY <br> OF THE PHILIPPINES</a>
 
             <nav class="navbar">
                 <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,15 +83,31 @@ session_start();
                     <!--HEAD-->
                     <thead>
                         <tr>
-                            <th>Request ID</th>
+                            <th>Transaction ID</th>
                             <th>Student Number</th>
-                            <th>Student Name</th>
-                            <th>Request Subjects</th>
+                            <th>Request Subject</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody id=submitreqtable>
+                        <!-- PHP CODE TO FETCH DATA FROM ROWS-->
+                        <?php   // LOOP TILL END OF DATA 
+                            while($rows=$display_student_req->fetch_assoc())
+                            {
+                        ?>
 
+                        <tr>
+                            <!--FETCHING DATA FROM EACH 
+                                ROW OF EVERY COLUMN-->
+                            <td><?php echo $rows['trans_id'];?></td>
+                            <td><?php echo $rows['stud_id'];?></td>
+                            <td><?php echo $rows['sub_code'];?> <?php echo $rows['sub_name'];?></td>
+                            <td><?php echo $rows['remarks'];?></td>
+                        </tr>
+
+                        <?php
+                            }
+                        ?>
                     </tbody>
                 </table>
             </div>
