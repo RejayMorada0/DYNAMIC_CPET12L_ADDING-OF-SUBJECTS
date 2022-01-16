@@ -95,7 +95,7 @@ session_start();
                             <th>Status</th>
                         </tr>
                     </thead>
-                    <tbody id=picstudenttable onclick="getDataFromCurrentCell(event)" border="1">
+                    <tbody id=picstudenttable border="1">
                         <!-- PHP CODE TO FETCH DATA FROM ROWS-->
                         <?php   // LOOP TILL END OF DATA 
                             while($rows=$student_data->fetch_assoc())
@@ -105,8 +105,8 @@ session_start();
                         <tr>
                             <!--FETCHING DATA FROM EACH 
                                 ROW OF EVERY COLUMN-->
-                            <td><?php echo $rows['stud_id'];?></td>
-                            <td><?php echo $rows['fn'];?> <?php echo $rows['ln'];?></td>
+                            <td class='item-id'><?php echo $rows['stud_id'];?></td>
+                            <td class='item-name'><?php echo $rows['fn'];?> <?php echo $rows['ln'];?></td>
                             <td><?php echo $rows['section'];?></td>
                             <td><?php echo $rows['email'];?></td>
                             <td><?php echo $rows['stud_stats'];?></td>
@@ -134,18 +134,13 @@ session_start();
                 });
 
 
-            function getDataFromCurrentCell(e) {
+                $("tr").click(function() {
 
-                var currow = (e.target.parentNode.innerText); //Current row.
-                // whole cell;
-                var postTitle = event.target.parentNode.parentNode.childNodes[1].textContent;
-                var stud_id = e.target.parentNode.childNodes[0].textContent;
-                alert(postTitle)
-                // set student details from student cell to transfet on checking page
-                localStorage.setItem("stud_id", stud_id);
-            
-                document.location = 'checking.php'
-            }
+                var id = $(this).find('.item-id').text();
+                var name = $(this).find('.item-name').text();
+
+                alert("Your data is: " + $.trim(id) + " , " + $.trim(name));
+                });
 
         </script>
     </body>
