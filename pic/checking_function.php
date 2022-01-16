@@ -45,7 +45,6 @@ $mysqli->close();
 if(isset($_COOKIE['stud_id'])) { 
     $stud_id = $_COOKIE['stud_id'];
   
-
     // Server is localhost
     $dbhost = "localhost";
     $dbuser = "root";
@@ -65,6 +64,7 @@ if(isset($_COOKIE['stud_id'])) {
    
     $sql = "SELECT * FROM student_request WHERE stud_id = '$stud_id' ORDER BY yr_and_sem ASC ";
     $student_grades_result = $mysqli->query($sql);
+    $mysqli->close();
 
 }
 ?>
