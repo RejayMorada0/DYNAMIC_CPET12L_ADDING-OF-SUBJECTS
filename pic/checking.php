@@ -130,12 +130,28 @@ session_start();
                     <thead>
                         <th>SUBJECT CODE</th>
                         <th>SUBJECT NAME</th>
-                        <th>YEAR AND SEMESTER</th>
                         <th>GRADES</th>
                         <th>REMARKS</th>
                     </thead>
                     <tbody id="allsub">
+                         <!-- PHP CODE TO FETCH DATA FROM ROWS-->
+                         <?php   // LOOP TILL END OF DATA 
+                            while($rows=$student_grades_result->fetch_assoc())
+                            {
+                        ?>
 
+                        <tr>
+                            <!--FETCHING DATA FROM EACH 
+                                ROW OF EVERY COLUMN-->
+                                <td><?php echo $rows['sub_code'];?></td>
+                                <td><?php echo $rows['sub_name'];?></td>
+                                <td><?php echo $rows['grades'];?></td>
+                                <td><?php echo $rows['remarks'];?></td>
+                        </tr>
+
+                        <?php
+                            }
+                        ?>
                     </tbody>
 
                 </table>
@@ -190,6 +206,10 @@ session_start();
         var a = localStorage.getItem("stud_id");
         var b = localStorage.getItem("fn_ln");
         document.getElementById("studentname").innerHTML = "Student:" + " " + a + " " + b;
+
+        //trancfer js var in php var
+        document.cookie = "stud_id = " + a ;
+        
     </script>
 </body>
 

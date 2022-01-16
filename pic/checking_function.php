@@ -40,4 +40,29 @@ $offer_result = $mysqli->query($sql1);
 $mysqli->close();
 
 
+//display student request data in checking page
+// source: https://stackoverflow.com/questions/1917576/how-do-i-pass-javascript-variables-to-php
+if(isset($_COOKIE['stud_id'])) { 
+    $stud_id = $_COOKIE['stud_id'];
+
+    // Server is localhost
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $dbname = "adding_subjects_db";
+    $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+    
+    // Checking for connections
+    if ($mysqli->connect_error) {
+        die('Connect Error (' . 
+        $mysqli->connect_errno . ') '. 
+        $mysqli->connect_error);
+    }
+
+    //View Student Requests In Table
+    // SQL query to select data from database
+    $sql = "SELECT * FROM student_request WHERE stud_id = '$stud_id' ORDER BY yr_and_sem ASC ";
+    $student_grades_result = $mysqli->query($sql);
+
+}
 ?>
