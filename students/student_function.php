@@ -43,9 +43,16 @@ if ($mysqli->connect_error) {
 }
 
 
+// Call student id
+$email = $_SESSION['email'];
+$stud_sql = "SELECT stud_id FROM student_accounts WHERE email ='$email' ";
+$stud_sql_result = mysqli_query($con, $stud_sql);
+$user_data = mysqli_fetch_assoc($stud_sql_result);
+$stud_id = $user_data['stud_id'];
+
 //View Student Requests In Table
 // SQL query to select data from database
-$sql = "SELECT * FROM student_request ORDER BY yr_and_sem ASC ";
+$sql = "SELECT * FROM student_request WHERE stud_id = '$stud_id' ORDER BY yr_and_sem ASC ";
 $display_student_req = $mysqli->query($sql);
 
 //UPDATING OF GRADES
@@ -84,14 +91,14 @@ function updateAction() {
 
 
     // sql to update the record subject of the student in database
-    $sql = "SELECT sub_code FROM student_request WHERE stud_id ='$stud_id' limit 1";
+    $sql = "SELECT * FROM student_request WHERE stud_id ='$stud_id' limit 1";
     $result = (mysqli_query($con, $sql));
 
     if ($result)
     {
         if($result && mysqli_num_rows($result) > 0){
  
-            $update_result = "UPDATE `student_request` SET grades = '$grades' WHERE sub_code = '$sub_code' ";
+            $update_result = "UPDATE `student_request` SET grades = '$grades' WHERE sub_code = '$sub_code' AND stud_id = '$stud_id' ";
             $result = (mysqli_query($con, $update_result));
 
             // Message
