@@ -61,6 +61,7 @@ if(isset($_COOKIE['stud_id'])) {
 
     //View Student Requests In Table
     // SQL query to select data from database
+   
     $sql = "SELECT * FROM student_request WHERE stud_id = '$stud_id' ORDER BY yr_and_sem ASC ";
     $student_grades_result = $mysqli->query($sql);
 
