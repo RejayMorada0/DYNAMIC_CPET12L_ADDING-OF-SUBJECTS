@@ -133,14 +133,14 @@ session_start();
                     }, 10000);
                 });
 
+            // Functions to get data on onclick php and html table
+            $("tr").click(function() {
 
-                $("tr").click(function() {
+            var id = $(this).find('.item-id').text();
+            var name = $(this).find('.item-name').text();
 
-                var id = $(this).find('.item-id').text();
-                var name = $(this).find('.item-name').text();
-
-                alert("Your data is: " + $.trim(id) + " , " + $.trim(name));
-                });
+            alert( $.trim(id) + " : " + $.trim(name));
+            });
 
         </script>
     </body>
