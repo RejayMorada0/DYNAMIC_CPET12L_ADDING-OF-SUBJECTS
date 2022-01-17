@@ -91,17 +91,17 @@ session_start();
         <div class="grades">
             <p>CHECKING OF GRADES</p>
         </div>
-        <form class="needs-validation" name="addremarksform" action="javascript:addremarks();" novalidate>
+        <form class="needs-validation" method="post">
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="validationTooltip01">Subject Code</label>
-                    <input type="text" class="form-control" id="validationTooltip01" required>
+                    <input type="text" name = "sub_code" class="form-control" id="validationTooltip01" required>
 
                 </div>
 
                 <div class="col-md-4 mb-3">
                     <label for="validationTooltip02">Remarks</label>
-                    <select class="custom-select" id="validationTooltip02" required>
+                    <select name = "remarks"class="custom-select" id="validationTooltip02" required>
                   <option selected disabled value="">Choose...</option>
                   <option value="Passed">Passed</option>
                   <option value="Failed">Failed</option>
@@ -111,7 +111,7 @@ session_start();
                 </div>
 
                 <div class="remarkbttn">
-                    <button class="btn btn-primary" type="submit" id="addremarks">Add Remarks</button>
+                    <input class="btn btn-primary" type="submit" id="addremarks" value="Add Remarks" name="remarkAction">
                 </div>
         </form>
 

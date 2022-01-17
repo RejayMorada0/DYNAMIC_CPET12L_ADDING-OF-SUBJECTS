@@ -67,4 +67,39 @@ if(isset($_COOKIE['id'])) {
     $mysqli->close();
 
 }
+
+if(array_key_exists('remarkAction', $_POST)) {
+    remarkAction();
+}
+
+//remark function
+function remarkAction() {
+    
+ // call the connections
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $dbname = "adding_subjects_db";
+    $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+
+    //error handling
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    
+    //input was posted
+    $stud_id = $user_data['stud_id'];
+	$sub_code = $_POST['sub_code'];
+	$grades = $_POST['grades'];
+
+
+    // sql to update the record subject of the student in database
+    $sql = "SELECT * FROM student_request WHERE stud_id ='$stud_id' limit 1";
+    $result = (mysqli_query($con, $sql));
+
+
+
+}
 ?>
