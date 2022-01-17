@@ -42,8 +42,8 @@ $mysqli->close();
 
 //display student request data in checking page
 // source: https://stackoverflow.com/questions/1917576/how-do-i-pass-javascript-variables-to-php
-if(isset($_COOKIE['stud_id'])) { 
-    $stud_id = $_COOKIE['stud_id'];
+if(isset($_COOKIE['id'])) { 
+    $stud_id = $_COOKIE['id'];
   
     // Server is localhost
     $dbhost = "localhost";

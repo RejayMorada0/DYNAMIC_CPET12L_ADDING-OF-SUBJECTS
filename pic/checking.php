@@ -211,12 +211,12 @@ session_start();
                 });
 
         // get student email from student cell in index page
-        var a = localStorage.getItem("stud_id");
-        var b = localStorage.getItem("fn_ln");
+        var a = localStorage.getItem("id");
+        var b = localStorage.getItem("name");
         document.getElementById("studentname").innerHTML = "Student:" + " " + a + " " + b;
 
         //trancfer js var in php var
-        document.cookie = "stud_id = " + a ;
+        document.cookie = "id = " + a ;
       
     </script>
 </body>

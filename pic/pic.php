@@ -141,12 +141,14 @@ session_start();
             var name = $(this).find('.item-name').text();
 
             //alert( $.trim(id) + " : " + $.trim(name));
+            //var stud_id = $.trim(id)
+            //var fn_ln = $.trim(name)
 
-            var stud_id = $.trim(id)
-            var fn_ln = $.trim(name)
-            localStorage.setItem("stud_id", stud_id);
-            localStorage.setItem("fn_ln", fn_ln);
 
+            localStorage.setItem("id", id);
+            localStorage.setItem("name", name);
+            //trancfer js var in php var
+            document.cookie = "id = " + id ;
             location.href = 'checking.php';
             });
 
