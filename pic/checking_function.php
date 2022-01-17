@@ -90,16 +90,56 @@ function remarkAction() {
 
     
     //input was posted
-    $stud_id = $user_data['stud_id'];
+    $stud_id = $_COOKIE['id'];
 	$sub_code = $_POST['sub_code'];
-	$grades = $_POST['grades'];
+	$remarks = $_POST['remarks'];
+
+ 
 
 
     // sql to update the record subject of the student in database
-    $sql = "SELECT * FROM student_request WHERE stud_id ='$stud_id' limit 1";
+    $sql = "SELECT * FROM student_request WHERE stud_id ='$stud_id' AND sub_code = '$sub_code' limit 1";
     $result = (mysqli_query($con, $sql));
 
+    if ($result)
+    {
+        if($result && mysqli_num_rows($result) > 0){
+ 
+            $update_result = "UPDATE `student_request` SET remarks = '$remarks' WHERE sub_code = '$sub_code' AND stud_id = '$stud_id' ";
+            $result = (mysqli_query($con, $update_result));
 
+            // Message
+            function function_alert($message) {
+                    
+                // Display the alert box 
+                echo "<script>alert('$message');</script>";
+            }
+            // Message call
+            function_alert("Updated");
 
+        }
+        else {
+            // Function definition
+            function function_alert1($message1) {
+                    
+                // Display the alert box 
+                echo "<script>alert('$message1');</script>";
+            }
+            // Function call
+            function_alert1("Subject does not exist.");
+            //mysqli_close($con);
+        }
+    }
+    else {
+        echo mysqli_connect_error();
+    }
+ 
 }
+
+
+
+
+
+
+
 ?>

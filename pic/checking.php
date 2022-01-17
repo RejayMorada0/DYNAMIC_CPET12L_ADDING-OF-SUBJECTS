@@ -101,7 +101,7 @@ session_start();
 
                 <div class="col-md-4 mb-3">
                     <label for="validationTooltip02">Remarks</label>
-                    <select name = "remarks"class="custom-select" id="validationTooltip02" required>
+                    <select name = "remarks" class="custom-select" id="validationTooltip02" required>
                   <option selected disabled value="">Choose...</option>
                   <option value="Passed">Passed</option>
                   <option value="Failed">Failed</option>
