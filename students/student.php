@@ -168,26 +168,21 @@ session_start();
 
                         </table>
                     </div>
-                    <div class="imgforgrades">
-                        <p>*Input your previous grades on the following academic year and upload a photo from ers as a proof.</p>
-                        <input type="file" id="gradesfile" accept=".jpg, .png, .jpeg">
-                    </div>
 
+                    <form name="student_grade" method="post">
+                        <div class="imgforgrades">
+                            <p>*Input your previous grades on the following academic year and upload a photo from ers as a proof.</p>
+                            <input type="file" name="gradesfile" accept=".jpg, .png, .jpeg">
+                        </div>
 
-                    <div class="submitbutton">
-                        <form name="student_grade" action="javascript:studentGrade();">
-                            <!--<input type="submit" value="SUBMIT REQUEST">-->
-                        </form>
-                    </div>
-
+                        <div class="submitbutton">
+                                <input type="submit" value="SUBMIT REQUEST" id="submitbtn" name="submitAction">
+                        </div>
+                    </form>
 
     </section>
 
-    <div class="submitbutton">
-        <form name="student_grade" action="javascript:studentGrade();">
-            <input type="submit" value="SUBMIT REQUEST" id="submitbtn">
-        </form>
-    </div>
+  
 
 
     <script src="../signinlogin/js/bootstrap.bundle.min.js"></script>

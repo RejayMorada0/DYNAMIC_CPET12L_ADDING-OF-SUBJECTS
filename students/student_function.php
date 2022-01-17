@@ -59,6 +59,9 @@ $display_student_req = $mysqli->query($sql);
 if(array_key_exists('updateAction', $_POST)) {
     updateAction();
 }
+else if(array_key_exists('submitAction', $_POST)) {
+    submitAction();
+}
 
 //update function
 function updateAction() {
@@ -127,6 +130,12 @@ function updateAction() {
         echo mysqli_connect_error();
     }
  
+}
+
+//submit and add image function
+function submitAction() {
+    //code here
+    
 }
 
 ?>
