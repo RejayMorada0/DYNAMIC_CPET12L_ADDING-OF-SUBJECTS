@@ -7,8 +7,8 @@ function check_login($con)
 	if(isset($_SESSION['email']))
 	{
 
-		$id = $_SESSION['email'];
-		$query = "select * from student_accounts where email = '$id' limit 1";
+		$email = $_SESSION['email'];
+		$query = "SELECT * from student_accounts WHERE email = '$email' LIMIT 1";
 
 		$result = mysqli_query($con,$query);
 		if($result && mysqli_num_rows($result) > 0)
