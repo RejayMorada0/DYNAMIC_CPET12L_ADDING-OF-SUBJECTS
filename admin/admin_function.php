@@ -65,6 +65,8 @@ else if(array_key_exists('changeAction', $_POST)) {
     changeAction();
 }
 
+
+//Remove subject in table
 function removeAction() {
 
     // call the connections
@@ -93,27 +95,16 @@ function removeAction() {
  
             $del_result = "DELETE FROM `all_subjects` WHERE sub_code = '$sub_code'";
             $result = (mysqli_query($con, $del_result));
-
-            // Message
-            function function_alert($message) {
-                    
-                // Display the alert box 
-                echo "<script>alert('$message');</script>";
-            }
-            // Message call
-            function_alert("Deleted");
-
+            
+            // Display the alert box 
+            echo "<script>alert('Deleted');</script>";
+        
         }
         else {
-            // Function definition
-            function function_alert1($message1) {
-                    
-                // Display the alert box 
-                echo "<script>alert('$message1');</script>";
-            }
-            // Function call
-            function_alert1("Subject does not exist.");
-            //mysqli_close($con);
+
+            // Display the alert box 
+            echo "<script>alert('Subject does not exist.');</script>";
+         
         }
     }
     else {
@@ -123,7 +114,7 @@ function removeAction() {
 }
 
 
-
+//Add subject in table
 function addAction() {
 
      // call the connections
@@ -155,15 +146,9 @@ function addAction() {
         {
             if($result && mysqli_num_rows($result) > 0){
 
-                // Function definition
-                function function_alert1($message1) {
-                        
-                    // Display the alert box 
-                    echo "<script>alert('$message1');</script>";
-                }
-                // Function call
-                function_alert1("Subject Code already exist.");
-                //mysqli_close($con);
+                // Display the alert box 
+                echo "<script>alert('Subject Code already exist.');</script>";
+            
             }
             else 
             {
@@ -172,34 +157,24 @@ function addAction() {
                 $add_result = "INSERT INTO all_subjects (sub_code, sub_name, yr_and_sem, offer_stats) VALUES ('$sub_code','$sub_name','$yr_and_sem','$offer_stats')";
                 $result = (mysqli_query($con, $add_result));
 
-                // Message
-                function function_alert2($message2) {
-                        
-                    // Display the alert box 
-                    echo "<script>alert('$message2');</script>";
-                }
-                // Message call
-                function_alert2("Successfully Added");    
-                
+                // Display the alert box 
+                echo "<script>alert('Successfully Added');</script>";
+                  
             }
         }
         
     }
     else 
     {
-        // Function definition
-        function function_alert0($message0) {
-                        
-            // Display the alert box 
-            echo "<script>alert('$message0');</script>";
-        }
-        // Function call
-        function_alert0("Complete all fields");
-        //mysqli_close($con);
+
+        // Display the alert box 
+        echo "<script>alert('Complete all fields');</script>";
+
     }
 }
 
 
+//Update Offer status of the subject in table
 function changeAction() {
     // call the connections
     $dbhost = "localhost";
@@ -229,30 +204,19 @@ function changeAction() {
             {
                 $update_result = "UPDATE all_subjects SET offer_stats='$offer_stats' WHERE sub_code = '$sub_code'";
                 $result = (mysqli_query($con, $update_result));
-
-                // Message
-                function function_alert1($message1) {
                         
-                    // Display the alert box 
-                    echo "<script>alert('$message1');</script>";
-                }
-                // Message call
-                function_alert1("Successfully updated the offer status"); 
-
+                // Display the alert box 
+                echo "<script>alert('Successfully updated the offer status');</script>";
+    
             }
             else
             {
-                // Function definition
-                function function_alert0($message0) {
-                                
-                    // Display the alert box 
-                    echo "<script>alert('$message0');</script>";
-                }
-                // Function call
-                function_alert0("Subject Code does not exist.");     
+
+                // Display the alert box 
+                echo "<script>alert('Subject Code does not exist.');</script>";
+   
             }
         }
-
 }
 
 
