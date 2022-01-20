@@ -107,27 +107,16 @@ function remarkAction() {
  
             $update_result = "UPDATE `student_request` SET remarks = '$remarks' WHERE sub_code = '$sub_code' AND stud_id = '$stud_id' ";
             $result = (mysqli_query($con, $update_result));
-
-            // Message
-            function function_alert($message) {
-                    
-                // Display the alert box 
-                echo "<script>alert('$message');</script>";
-            }
-            // Message call
-            function_alert("Updated");
+  
+            // Display the alert box 
+            echo "<script>alert('Updated');</script>";
 
         }
         else {
-            // Function definition
-            function function_alert1($message1) {
-                    
-                // Display the alert box 
-                echo "<script>alert('$message1');</script>";
-            }
-            // Function call
-            function_alert1("Subject does not exist.");
-            //mysqli_close($con);
+         
+            // Display the alert box 
+            echo "<script>alert('Subject does not exist.');</script>";
+           
         }
     }
     else {
