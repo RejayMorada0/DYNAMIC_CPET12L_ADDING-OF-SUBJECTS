@@ -170,9 +170,20 @@ session_start();
                     </div>
 
                     <form name="student_grade" method="post">
-                        <div class="imgforgrades">
+                        <div class="imgforgrades" hidden>
                             <p>*Input your previous grades on the following academic year and upload a photo from ers as a proof.</p>
                             <input type="file" name="gradesfile" accept=".jpg, .png, .jpeg">
+                        </div>
+
+                        <div class="submitbutton" hidden>
+                                <input type="submit" value="SUBMIT REQUEST" id="submitbtn" >
+                        </div>
+                    </form>
+
+                    <form method="post" enctype='multipart/form-data'>
+                        <div class="imgforgrades">
+                            <p>*Input your previous grades on the following academic year and upload a photo from ers as a proof.</p>
+                            <input type="file" name="image" id="file" required>
                         </div>
 
                         <div class="submitbutton">
@@ -182,7 +193,7 @@ session_start();
 
     </section>
 
-  
+    
 
 
     <script src="../signinlogin/js/bootstrap.bundle.min.js"></script>

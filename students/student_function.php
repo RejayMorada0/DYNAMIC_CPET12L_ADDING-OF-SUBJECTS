@@ -125,7 +125,82 @@ function updateAction() {
 function submitAction() {
     //code here
     //source : https://www.studentstutorial.com/php/php-insert-image
+
+    // call the connections
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $dbname = "adding_subjects_db";
+    $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+
+
+    //error handling
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    // Call student id
+    $email = $_SESSION['email'];
+    $stud_sql = "SELECT stud_id FROM student_accounts WHERE email ='$email' ";
+    $stud_sql_result = mysqli_query($con, $stud_sql);
+    $user_data = mysqli_fetch_assoc($stud_sql_result);
+
+    
+    //input was posted
+    $stud_id = $user_data['stud_id'];
+
+
+    // sql to update the record subject of the student in database
+    $sql = "SELECT * FROM student_accounts WHERE stud_id ='$stud_id' limit 1";
+    $result = (mysqli_query($con, $sql));
+
+    if ($result)
+    {
+        if($result && mysqli_num_rows($result) > 0){
+
+            $filename = $_FILES['image']['name'];
+	
+            // Select file type
+            $imageFileType = strtolower(pathinfo($filename,PATHINFO_EXTENSION));
+            
+            // valid file extensions
+            $extensions_arr = array("jpg","jpeg","png","gif");
+         
+            // Check extension
+            if( in_array($imageFileType,$extensions_arr) ){
+         
+            // Upload files and store in database
+            if(move_uploaded_file($_FILES["image"]["tmp_name"],'upload/'.$filename)){
+                // Image db insert sql
+                //$insert = "INSERT INTO student_accounts(image) values('$filename')  WHERE stud_id = '$stud_id' ";
+                $insert =  "UPDATE student_accounts SET image = '$filename' WHERE stud_id = '$stud_id' ";
+                if(mysqli_query($con, $insert)){
+                  echo 'Data inserted successfully';
+                }
+                else{
+                  echo 'Error: '.mysqli_error($con);
+                }
+            }else{
+                echo 'Error in uploading file - '.$_FILES['image']['name'].'<br/>';
+            }
+            }
+            // Display the alert box 
+            echo "<script>alert('Updated');</script>";
+
+        }
+        else {
+                    
+            // Display the alert box 
+            echo "<script>alert('Handling error.');</script>";
+           
+        }
+    }
+    else {
+        echo mysqli_connect_error();
+    }
+  
     
 }
+
 
 ?>
