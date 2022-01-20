@@ -83,6 +83,8 @@ session_start();
 
             <table>
                 <thead>
+                    <th>ID</th>
+                    <th>STUDENT NUMBER</th>
                     <th>SUBJECT CODE</th>
                     <th>SUBJECT NAME</th>
                     <th>GRADES</th>
@@ -97,6 +99,8 @@ session_start();
                     <tr>
                         <!--FETCHING DATA FROM EACH 
                             ROW OF EVERY COLUMN-->
+                        <td><?php echo $rows['trans_id'];?></td>
+                        <td><?php echo $rows['stud_id'];?></td>
                         <td><?php echo $rows['sub_code'];?></td>
                         <td><?php echo $rows['sub_name'];?></td>
                         <td><?php echo $rows['grades'];?></td>
