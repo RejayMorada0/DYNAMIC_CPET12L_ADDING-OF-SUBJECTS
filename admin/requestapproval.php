@@ -41,7 +41,7 @@ session_start();
 
 </head>
 
-<body>
+<body id="ajax_func">
 
     <nav class="navbar navbar-expand-lg" id="tupcnav">
         <img src="images/tuplogo.png" width="50" height="50" alt="tuplogo">
@@ -83,15 +83,15 @@ session_start();
 
             <table>
                 <thead>
-                    <th>Transaction ID</th>
-                    <th>Student Number</th>
-                    <th>Request Subject</th>
-                    <th>Status</th>
+                    <th>SUBJECT CODE</th>
+                    <th>SUBJECT NAME</th>
+                    <th>GRADES</th>
+                    <th>REMARKS</th>
                 </thead>
-                <tbody id="allsubtable">
+                <tbody id="fyfs">
                     <!-- PHP CODE TO FETCH DATA FROM ROWS-->
                     <?php   // LOOP TILL END OF DATA 
-                        while($rows=$result->fetch_assoc())
+                        while($rows=$display_student_req->fetch_assoc())
                         {
                     ?>
                     <tr>
@@ -99,14 +99,12 @@ session_start();
                             ROW OF EVERY COLUMN-->
                         <td><?php echo $rows['sub_code'];?></td>
                         <td><?php echo $rows['sub_name'];?></td>
-                        <td><?php echo $rows['yr_and_sem'];?></td>
-                        <td><?php echo $rows['offer_stats'];?></td>
+                        <td><?php echo $rows['grades'];?></td>
+                        <td><?php echo $rows['remarks'];?></td>
                     </tr>
                     <?php
                         }
                     ?>
-
-
                 </tbody>
 
             </table>
