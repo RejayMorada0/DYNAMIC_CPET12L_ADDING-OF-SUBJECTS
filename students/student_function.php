@@ -125,6 +125,9 @@ function updateAction() {
 function submitAction() {
     //source : https://www.etutorialspoint.com/index.php/411-how-to-insert-image-in-database-using-php
 
+    //confirmation
+    // https://stackoverflow.com/questions/37659396/confirm-box-in-php
+/*
     // call the connections
     $dbhost = "localhost";
     $dbuser = "root";
@@ -196,7 +199,7 @@ function submitAction() {
     else {
         echo mysqli_connect_error();
     }
-  
+  */
     
 }
 

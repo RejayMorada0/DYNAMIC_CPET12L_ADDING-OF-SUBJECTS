@@ -193,7 +193,6 @@ session_start();
 
     </section>
 
-    
 
 
     <script src="../signinlogin/js/bootstrap.bundle.min.js"></script>
