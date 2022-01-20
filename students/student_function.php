@@ -123,8 +123,7 @@ function updateAction() {
 
 //submit and add image function
 function submitAction() {
-    //code here
-    //source : https://www.studentstutorial.com/php/php-insert-image
+    //source : https://www.etutorialspoint.com/index.php/411-how-to-insert-image-in-database-using-php
 
     // call the connections
     $dbhost = "localhost";
@@ -172,7 +171,6 @@ function submitAction() {
             // Upload files and store in database
             if(move_uploaded_file($_FILES["image"]["tmp_name"],'upload/'.$filename)){
                 // Image db insert sql
-                //$insert = "INSERT INTO student_accounts(image) values('$filename')  WHERE stud_id = '$stud_id' ";
                 $insert =  "UPDATE student_accounts SET image = '$filename' WHERE stud_id = '$stud_id' ";
                 if(mysqli_query($con, $insert)){
                   echo 'Data inserted successfully';
