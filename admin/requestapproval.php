@@ -81,12 +81,35 @@ session_start();
         <div class="reqapproval">
             <p>REQUEST APPROVAL</p>
 
-            <div class="studenttag">
-                <div class="btn-group-vertical">
-                    <!-- Button trigger modal -->
-                    <a class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" href="">cyrine.osorio@gsfe.tupcavite.edu.ph</a>
-                </div>
-            </div>
+            <table>
+                <thead>
+                    <th>Transaction ID</th>
+                    <th>Student Number</th>
+                    <th>Request Subject</th>
+                    <th>Status</th>
+                </thead>
+                <tbody id="allsubtable">
+                    <!-- PHP CODE TO FETCH DATA FROM ROWS-->
+                    <?php   // LOOP TILL END OF DATA 
+                        while($rows=$result->fetch_assoc())
+                        {
+                    ?>
+                    <tr>
+                        <!--FETCHING DATA FROM EACH 
+                            ROW OF EVERY COLUMN-->
+                        <td><?php echo $rows['sub_code'];?></td>
+                        <td><?php echo $rows['sub_name'];?></td>
+                        <td><?php echo $rows['yr_and_sem'];?></td>
+                        <td><?php echo $rows['offer_stats'];?></td>
+                    </tr>
+                    <?php
+                        }
+                    ?>
+
+
+                </tbody>
+
+            </table>
         </div>
 
 
@@ -148,6 +171,13 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
     <script src="requestapproval.js"></script>
+    <script>
+        $(document).ready (function () {
+        var updater = setTimeout (function () {
+            $('body#ajax_func').load ('requestapproval.php', 'update=true');
+        }, 10000);
+    });
+    </script>
 </body>
 
 </html>
