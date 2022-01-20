@@ -39,30 +39,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         if ($result)
         {
             if($result && mysqli_num_rows($result) > 0){
-
-                // Function definition
-                function function_alert($message) {
-                        
-                    // Display the alert box 
-                    echo "<script>alert('$message');</script>";
-                }
-                // Function call
-                function_alert("Srudent ID already exist.");
-                //mysqli_close($con);
+  
+                // Display the alert box 
+                echo "<script>alert('Student ID already exist.');</script>";       
             }
             else if ($result1)
             {
                 if($result1 && mysqli_num_rows($result1) > 0){
-
-                    // Function definition
-                    function function_alert1($message1) {
-                            
-                        // Display the alert box 
-                        echo "<script>alert('$message1');</script>";
-                    }
-                    // Function call
-                    function_alert1("Srudent Email already exist.");
-                    //mysqli_close($con);
+     
+                    // Display the alert box 
+                    echo "<script>alert('Student Email already exist.');</script>";
                 }
                 else 
                 {
@@ -101,17 +87,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                         $add_result = "INSERT INTO student_request (stud_id, sub_code, sub_name, yr_and_sem, grades, remarks) VALUES ('$stud_id','$sub_code','$sub_name', '$yr_and_sem', '$grades','$remarks')";
                         $result1 = (mysqli_query($con, $add_result));
                     }
-                
-
-                    // Function definition
-                    function function_alert($message) {
-                        
-                        // Display the alert box 
-                        echo "<script>alert('$message');</script>";
-                    }
-                    // Function call
-                    function_alert("Successfully created account, but you need to login first.");
-
+                    
+                    // Display the alert box 
+                    echo "<script>alert('Successfully created account, but you need to login first.');</script>";
+                   
 
                     // head to the nect page directory
                     $path = $_SERVER['SERVER_NAME'].'../../../signinlogin';
@@ -124,15 +103,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     }
     else 
     {
-        // Function definition
-        function function_alert0($message0) {
-                        
-            // Display the alert box 
-            echo "<script>alert('$message0');</script>";
-        }
-        // Function call
-        function_alert0("Complete all fields");
-        //mysqli_close($con);
+        // Display the alert box 
+        echo "<script>alert('Complete all fields');</script>";
     }
 }
 ?>
