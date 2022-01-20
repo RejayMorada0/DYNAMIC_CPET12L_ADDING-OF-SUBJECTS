@@ -76,26 +76,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                 }
             }
         }
-        
-        // Function definition
-        function function_alert($message) {
             
             // Display the alert box 
-            echo "<script>alert('$message');</script>";
-        }
-        // Function call
-        function_alert("Wrong username or password!");
+            echo "<script>alert('Wrong username or password!');</script>";
+    
     }
     else
     {
-        // Function definition
-        function function_alert($message) {
-            
-            // Display the alert box 
-            echo "<script>alert('$message');</script>";
-        }
-        // Function call
-        function_alert("Wrong username or password!");
+        // Display the alert box 
+        echo "<script>alert('Wrong username or password!');</script>";
+      
     }
 }
 
