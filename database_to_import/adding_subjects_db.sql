@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2022 at 11:02 AM
+-- Generation Time: Jan 21, 2022 at 05:58 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -121,7 +121,8 @@ CREATE TABLE `student_accounts` (
   `section` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `passw` varchar(100) NOT NULL,
-  `stud_stats` varchar(100) NOT NULL
+  `stud_stats` varchar(100) NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -187,7 +188,7 @@ ALTER TABLE `student_request`
 -- AUTO_INCREMENT for table `student_request`
 --
 ALTER TABLE `student_request`
-  MODIFY `trans_id` bigint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1750;
+  MODIFY `trans_id` bigint(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1814;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
