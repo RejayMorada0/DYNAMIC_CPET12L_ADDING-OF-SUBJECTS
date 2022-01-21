@@ -95,7 +95,7 @@ session_start();
                 <div class="statusCenter">
                     <label id='status1'><?php echo $user_data['stud_stats']; ?></label>
                 </div>
-                <form class="form-inline" method="post" action="generate_pdf.php">
+                <form class="form-inline" target="_blank" method="post" action="generate_pdf.php">
                     <div class="statusCenter" <?php echo $style;?>>
                         <button type="submit" id="pdf" name="generate_pdf" > <i class="bi bi-download"></i> Download PDF</button>
                     </div>
