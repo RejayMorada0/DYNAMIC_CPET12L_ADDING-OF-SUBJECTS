@@ -71,7 +71,7 @@ else {
     $style = "style='display:none;'";
 }
 
-
+// if submitted disable the button
 if ($user_stats['stud_stats'] == 'Processing' ){
     echo "<script>document.getElementById('validationTooltip01').disabled = false;</script>";
     echo "<script>document.getElementById('validationTooltip02').disabled = false;</script>";
