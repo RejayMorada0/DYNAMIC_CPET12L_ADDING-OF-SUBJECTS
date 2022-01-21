@@ -99,11 +99,11 @@ function Approved() {
     {
         if($result && mysqli_num_rows($result) > 0){
 
-            $update_result = "UPDATE 'student_request' SET remarks = '$remarks2' WHERE stud_id = '$stud_id' AND remarks = '$remarks1' ";
+            $update_result = "UPDATE student_request SET remarks = '$remarks2' WHERE stud_id = '$stud_id' AND remarks = '$remarks1' ";
             $result1 = (mysqli_query($con, $update_result));
 
             $stud_stats = 'Approved';
-            $update_result1 = "UPDATE 'student_accounts' SET stud_stats = '$stud_stats' WHERE stud_id = '$stud_id' ";
+            $update_result1 = "UPDATE student_accounts SET stud_stats = '$stud_stats' WHERE stud_id = '$stud_id' ";
             $result2 = (mysqli_query($con, $update_result1));
                     
             // Display the alert box 
