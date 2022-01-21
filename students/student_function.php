@@ -65,10 +65,11 @@ $user_stats = mysqli_fetch_assoc($stats_pdf);
 
 if ($user_stats['stud_stats'] == 'Approved' ){
     $style = "style='display:grid;'";
-    
+    $style1 = "style ='background-color:#E2435E;'";
 }
 else {
     $style = "style='display:none;'";
+    $style1 = "style='display:none;'";
 }
 
 // if submitted disable the button
@@ -99,6 +100,9 @@ if(array_key_exists('updateAction', $_POST)) {
 }
 else if(array_key_exists('submitAction', $_POST)) {
     submitAction();
+}
+else if(array_key_exists('editAction', $_POST)) {
+    editAction();
 }
 
 //update function
@@ -240,6 +244,11 @@ function submitAction() {
     }
  
     
+}
+
+function editAction() {
+    echo "<script>alert('Handling error.');</script>";
+
 }
 
 

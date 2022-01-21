@@ -114,6 +114,9 @@ session_start();
     <section>
         <div class="subject">
             <p>REQUEST OF SUBJECT</p>
+            <form method="post">
+                <input type="submit" value="Request New" id="editGrade"  name="editAction" <?php echo $style1;?>  >
+            </form>
         </div>
 
         <div>
@@ -131,7 +134,6 @@ session_start();
 
                     <div class="gradebutton">
                         <input class="btn btn-primary" type="submit" value="Update Grade" id="updategrade"  name="updateAction">
-
                     </div>
             </form>
             </div>
