@@ -107,7 +107,7 @@ function Approved() {
             $result2 = (mysqli_query($con, $update_result1));
                     
             // Display the alert box 
-            echo "<script>alert('Updated');</script>";
+            echo "<script>alert('Approved Student Requests');</script>";
 
         }
         else {
