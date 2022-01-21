@@ -161,7 +161,7 @@ session_start();
             <div class="imgforgrades">
                 <p>*Attached Files is the grades of the sudents in following academic year and download it to double check the input grades of the students in the system. <br>
                 After you edit the remarks of the student request, submit it and wait for admin's approval. </p>
-                <a target="_blank" href="../students/upload/<?php echo $image_data['image']; ?>" > <?php echo $image_data['image']; ?> </a>
+                <a download target="_blank" href="../students/upload/<?php echo $image_data['image']; ?>" > <?php echo $image_data['image']; ?> </a>
                
             </div>
 
