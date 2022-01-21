@@ -145,9 +145,18 @@ section {
 }
 
 .statusCenter button {
+    border: 0;
+    border-radius: 0;
+    background: none;
+    -webkit-appearance: none;
     text-decoration: none;
     color: #E2435E;
     font-weight: 300px;
+}
+
+.statusCenter button:hover {
+    color: #ee1a3d;
+    font-weight: 500px;
 }
 
 .subject {
@@ -323,9 +332,17 @@ tr {
         color: white;
     }
     .statusCenter button {
+        border: 0;
+        border-radius: 0;
+        background: none;
+        -webkit-appearance: none;
         text-decoration: none;
         color: white;
         font-weight: 300px;
+    }
+    .statusCenter button:hover {
+        color: #ee1a3d;
+        font-weight: 500px;
     }
     .subject,
     #myTab {

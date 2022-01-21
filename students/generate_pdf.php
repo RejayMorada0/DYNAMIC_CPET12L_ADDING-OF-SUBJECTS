@@ -1,5 +1,5 @@
 <?php
-
+ 
 Class dbObj{
 /* Database connection start */
 var $dbhost = "localhost";
@@ -35,11 +35,11 @@ function Header()
     $this->Image('upload/tuplogo.png',10,2,30);
     $this->SetFont('Arial','B',13);
     // Move to the right
-    $this->Cell(50);
+    $this->Cell(35);
     // Title
-    $this->Cell(100,10,'Adding of Subjects for Irregualr Students',1,0,'C');
+    $this->Cell(300,10,'Adding of Subjects for Irregualr Students',1,0,'C');
     // Line break
-    $this->Ln(20);
+    $this->Ln(30);
 }
 
 // Page footer
@@ -54,11 +54,13 @@ function Footer()
 }
 }
 
+
 $db = new dbObj();
 $connString =  $db->getConnstring();
 $display_heading = array('trans_id'=>'Transaction ID', 'stud_id'=> 'Student Number', 'sub_code'=> 'Subject Code','sub_name'=> 'Subject Name','yr_and_sem'=> 'Year And Semester' ,'grades'=> 'Grades' ,'remarks'=> 'Remarks');
 
-$result = mysqli_query($connString, "SELECT * FROM student_request") or die("database error:". mysqli_error($connString));
+$result = mysqli_query($connString, "SELECT * FROM student_request  ") or die("database error:". mysqli_error($connString));
+// WHERE stud_id ='$stud_id'
 $header = mysqli_query($connString, "SHOW columns FROM student_request");
 
 $pdf = new PDF();
@@ -68,12 +70,12 @@ $pdf->AddPage("L","Legal");
 $pdf->AliasNbPages();
 $pdf->SetFont('Arial','B',8);
 foreach($header as $heading) {
-$pdf->Cell(50,12,$display_heading[$heading['Field']],1);
+$pdf->Cell(48,12,$display_heading[$heading['Field']],1);
 }
 foreach($result as $row) {
 $pdf->Ln();
 foreach($row as $column)
-$pdf->Cell(50,10,$column,1);
+$pdf->Cell(48,10,$column,1);
 }
 $pdf->Output();
 
