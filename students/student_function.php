@@ -55,6 +55,24 @@ $stud_id = $user_data['stud_id'];
 $sql = "SELECT * FROM student_request WHERE stud_id = '$stud_id' ORDER BY yr_and_sem ASC ";
 $display_student_req = $mysqli->query($sql);
 
+
+// show download button if the student request is approved.
+
+$sql1 = "SELECT * FROM student_accounts ";
+$stats_pdf = mysqli_query($con, $sql1);
+$user_stats = mysqli_fetch_assoc($stats_pdf);
+
+
+if ($user_stats['stud_stats'] == 'Approved' ){
+    $style = "style='display:grid;'";
+}
+else {
+    $style = "style='display:none;'";
+}
+
+
+
+
 //UPDATING OF GRADES
 if(array_key_exists('updateAction', $_POST)) {
     updateAction();

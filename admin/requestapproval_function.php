@@ -91,7 +91,7 @@ function Approved() {
 
 
     // sql to update the record subject of the student in database
-    $sql = "SELECT * FROM student_request WHERE stud_id ='$stud_id' AND remarks = '$remarks1' limit 1";
+    $sql = "SELECT * FROM student_request WHERE stud_id ='$stud_id' AND (remarks = '$remarks1' OR remarks = '$remarks2') limit 1";
     $result = (mysqli_query($con, $sql));
     
 

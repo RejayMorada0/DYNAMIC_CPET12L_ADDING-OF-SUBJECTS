@@ -96,7 +96,7 @@ session_start();
                     <label id='status1'><?php echo $user_data['stud_stats']; ?></label>
                 </div>
                 <div class="statusCenter">
-                    <a href="" target="_blank"> <i class="bi bi-download"></i> Download PDF</a>
+                    <a href="" target="_blank" <?php echo $style;?> > <i class="bi bi-download"></i> Download PDF</a>
                 </div>
             </div>
             <ul class="navbar-nav mr-auto">
