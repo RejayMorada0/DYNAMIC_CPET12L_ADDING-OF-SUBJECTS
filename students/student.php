@@ -97,7 +97,7 @@ session_start();
                 </div>
                 <form class="form-inline" target="_blank" method="post" action="generate_pdf.php">
                     <div class="statusCenter" <?php echo $style;?>>
-                        <button type="submit" id="pdf" name="generate_pdf" > <i class="bi bi-download"></i> Download PDF</button>
+                        <button type="submit" id="pdf" name="generate_pdf" download> <i class="bi bi-download"></i> Download PDF</button>
                     </div>
                 </form>
             </div>
