@@ -228,7 +228,9 @@ session_start();
             }, 1000);
         });
 
-        
+        var id = document.getElementById("studentnumber1").innerHTML
+        //trancfer js var in php var
+        document.cookie = "id = " + id ;
 
     </script>
 

@@ -22,7 +22,6 @@ return $this->conn;
 }
 
 
-
 //include connection file 
 include_once('libs/fpdf.php');
 
@@ -59,7 +58,8 @@ $db = new dbObj();
 $connString =  $db->getConnstring();
 $display_heading = array('trans_id'=>'Transaction ID', 'stud_id'=> 'Student Number', 'sub_code'=> 'Subject Code','sub_name'=> 'Subject Name','yr_and_sem'=> 'Year And Semester' ,'grades'=> 'Grades' ,'remarks'=> 'Remarks');
 
-$result = mysqli_query($connString, "SELECT * FROM student_request  ") or die("database error:". mysqli_error($connString));
+$stud_id = $_COOKIE['id'];
+$result = mysqli_query($connString, "SELECT * FROM student_request WHERE stud_id ='$stud_id'") or die("database error:". mysqli_error($connString));
 // WHERE stud_id ='$stud_id'
 $header = mysqli_query($connString, "SHOW columns FROM student_request");
 
