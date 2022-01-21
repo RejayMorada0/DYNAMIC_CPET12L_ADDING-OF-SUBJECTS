@@ -94,7 +94,7 @@ function updateAction() {
         else {
                     
             // Display the alert box 
-            echo "<script>alert('Subject does not exist.');</script>";
+            echo "<script>alert('Student Request does not exist.');</script>";
            
         }
     }
