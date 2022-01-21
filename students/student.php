@@ -182,7 +182,7 @@ session_start();
 
                     <form method="post" enctype='multipart/form-data'>
                         <div class="imgforgrades">
-                            <p>*Input your previous grades on the following academic year and upload a photo from ers as a proof.</p>
+                            <p>*Before submitting the Submit Request button make sure to input your previous grades on the following academic year and upload a photo from ers as a proof. After that your transaction status will be changed as 'Requested' and wait for the approval of Admin.</p>
                             <input type="file" name="image" id="file" required>
                         </div>
 

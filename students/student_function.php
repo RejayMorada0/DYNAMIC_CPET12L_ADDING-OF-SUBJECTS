@@ -173,8 +173,9 @@ function submitAction() {
          
             // Upload files and store in database
             if(move_uploaded_file($_FILES["image"]["tmp_name"],'upload/'.$filename)){
-                // Image db insert sql
-                $insert =  "UPDATE student_accounts SET image = '$filename' WHERE stud_id = '$stud_id' ";
+                // Image db insert sql and update student status
+                $stud_stats ="Requested";
+                $insert =  "UPDATE student_accounts SET image = '$filename', stud_stats ='$stud_stats' WHERE stud_id = '$stud_id' ";
                 if(mysqli_query($con, $insert)){
                   echo 'Data inserted successfully';
                 }
