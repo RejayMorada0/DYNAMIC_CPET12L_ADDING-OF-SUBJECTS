@@ -26,9 +26,8 @@ if ($mysqli->connect_error) {
 
 //View All Student Account In Table
 // SQL query to select data from database
-$stud_stats = "Processing";
-$stud_stats1 = "Requested";
-$sql = "SELECT * FROM student_accounts WHERE stud_stats ='$stud_stats' OR stud_stats = '$stud_stats1' ORDER BY stud_id ASC ";
+$stud_stats = "Requested";
+$sql = "SELECT * FROM student_accounts WHERE stud_stats ='$stud_stats' ORDER BY stud_id ASC ";
 $student_data = $mysqli->query($sql);
 
 ?>
