@@ -87,7 +87,7 @@ function Approved() {
     //input was posted
     $stud_id = $_POST['stud_id'];
     $remarks1 = "To Offer";
-    $remarks2 = "Approved";
+
 
 
     // sql to update the record subject of the student in database
@@ -98,7 +98,8 @@ function Approved() {
     if ($result)
     {
         if($result && mysqli_num_rows($result) > 0){
- 
+            
+            $remarks2 = "Approved";
             $update_result = "UPDATE student_request SET remarks = '$remarks2' WHERE stud_id = '$stud_id' AND remarks = '$remarks1' ";
             $result = (mysqli_query($con, $update_result));
 
