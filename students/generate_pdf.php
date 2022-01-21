@@ -32,12 +32,12 @@ class PDF extends FPDF
 function Header()
 {
     // Logo
-    $this->Image('upload/tuplogo.png',10,-1,70);
+    $this->Image('upload/tuplogo.png',10,2,30);
     $this->SetFont('Arial','B',13);
     // Move to the right
-    $this->Cell(80);
+    $this->Cell(50);
     // Title
-    $this->Cell(80,10,'Adding of Subjects for Irregualr Students',1,0,'C');
+    $this->Cell(100,10,'Adding of Subjects for Irregualr Students',1,0,'C');
     // Line break
     $this->Ln(20);
 }
@@ -56,28 +56,26 @@ function Footer()
 
 $db = new dbObj();
 $connString =  $db->getConnstring();
-//$display_heading = array('trans_id'=>'Transaction ID', 'stud_id'=> 'Student Number', 'sub_code'=> 'Subject Code','sub_name'=> 'Subject Name', ,'yr_and_sem'=> 'Year And Semester', ,'grades'=> 'Grades', ,'remarks'=> 'Remarks');
+$display_heading = array('trans_id'=>'Transaction ID', 'stud_id'=> 'Student Number', 'sub_code'=> 'Subject Code','sub_name'=> 'Subject Name','yr_and_sem'=> 'Year And Semester' ,'grades'=> 'Grades' ,'remarks'=> 'Remarks');
 
 $result = mysqli_query($connString, "SELECT * FROM student_request") or die("database error:". mysqli_error($connString));
 $header = mysqli_query($connString, "SHOW columns FROM student_request");
 
 $pdf = new PDF();
 //header
-$pdf->AddPage();
+$pdf->AddPage("L","Legal");
 //foter page
 $pdf->AliasNbPages();
-$pdf->SetFont('Arial','B',12);
-//foreach($header as $heading) {
-//$pdf->Cell(40,12,$display_heading[$heading['Field']],1);
-//}
+$pdf->SetFont('Arial','B',8);
+foreach($header as $heading) {
+$pdf->Cell(50,12,$display_heading[$heading['Field']],1);
+}
 foreach($result as $row) {
 $pdf->Ln();
 foreach($row as $column)
-$pdf->Cell(40,12,$column,1);
+$pdf->Cell(50,10,$column,1);
 }
 $pdf->Output();
-
-
 
 
 
