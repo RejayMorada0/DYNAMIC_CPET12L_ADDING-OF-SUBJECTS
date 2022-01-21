@@ -49,12 +49,12 @@ $sql = "SELECT * FROM student_request WHERE remarks = '$remarks' OR remarks = '$
 $display_student_req = $mysqli->query($sql);
 
 //UPDATING OF GRADES
-if(array_key_exists('updateAction', $_POST)) {
-    updateAction();
+if(array_key_exists('Approved', $_POST)) {
+    Approved();
 }
 
 //update function
-function updateAction() {
+function Approved() {
 
     // call the connections
     $dbhost = "localhost";
@@ -77,7 +77,7 @@ function updateAction() {
 
 
     // sql to update the record subject of the student in database
-    $sql = "SELECT * FROM student_request WHERE stud_id ='$stud_id' limit 1";
+    $sql = "SELECT * FROM student_request WHERE stud_id ='$stud_id' AND remarks = '$remarks1' limit 1";
     $result = (mysqli_query($con, $sql));
 
     if ($result)
