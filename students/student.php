@@ -178,7 +178,7 @@ session_start();
                         </div>
 
                         <div class="submitbutton" hidden>
-                                <input type="submit" value="SUBMIT REQUEST" id="submitbtn" >
+                                <input type="submit" value="SUBMIT REQUEST" id="" >
                         </div>
                     </form>
 
@@ -189,7 +189,7 @@ session_start();
                         </div>
 
                         <div class="submitbutton">
-                                <input type="submit" value="SUBMIT REQUEST" id="submitbtn" name="submitAction">
+                                <input type="submit" value="SUBMIT REQUEST" id="submitbtn" name="submitAction" <?php echo $disable_style;?> >
                         </div>
                     </form>
 

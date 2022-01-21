@@ -58,7 +58,7 @@ $display_student_req = $mysqli->query($sql);
 
 // show download button if the student request is approved.
 
-$sql1 = "SELECT * FROM student_accounts ";
+$sql1 = "SELECT * FROM student_accounts WHERE stud_id = '$stud_id' ";
 $stats_pdf = mysqli_query($con, $sql1);
 $user_stats = mysqli_fetch_assoc($stats_pdf);
 
@@ -71,6 +71,22 @@ else {
     $style = "style='display:none;'";
 }
 
+
+if ($user_stats['stud_stats'] == 'Processing' ){
+    echo "<script>document.getElementById('validationTooltip01').disabled = false;</script>";
+    echo "<script>document.getElementById('validationTooltip02').disabled = false;</script>";
+    echo "<script>document.getElementById('updategrade').disabled = false;</script>";
+    echo "<script>document.getElementById('submitbtn').disabled = false;</script>";
+    $disable_style = "style='background-color:#E2435E;'";
+    
+}
+else {
+    echo "<script>document.getElementById('validationTooltip01').disabled = true;</script>";
+    echo "<script>document.getElementById('validationTooltip02').disabled = true;</script>";
+    echo "<script>document.getElementById('updategrade').disabled = true;</script>";
+    echo "<script>document.getElementById('submitbtn').disabled = true;</script>";
+    $disable_style = "style='background-color:#e2a2ad; border: 0; color:#E2435E;'";
+}
 
 
 
