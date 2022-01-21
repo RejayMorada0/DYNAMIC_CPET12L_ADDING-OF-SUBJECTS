@@ -1,5 +1,5 @@
 <?php
- 
+
 Class dbObj{
 /* Database connection start */
 var $dbhost = "localhost";
