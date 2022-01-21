@@ -1,0 +1,2 @@
+Sa folder na ito ma-save mga in-upload na picture ng grades ng student :)
+Nilagyan ko lang ng txt file para hindi mabura sa github yung folder kapag walang laman na picture.
