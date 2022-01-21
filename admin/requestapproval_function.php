@@ -44,18 +44,12 @@ if ($mysqli->connect_error) {
 //View Student Requests In Table
 // SQL query to select data from database
 $stud_stats = 'Wait for Approval';
-$stud_stats = 'Approved';
-$sql = "SELECT * FROM student_accounts WHERE stud_stats = '$stud_stats' OR stud_stats = 'stud_stats' limit 1";
+$stud_stats1 = 'Approved';
+$sql = "SELECT * FROM student_accounts WHERE stud_stats = '$stud_stats' OR stud_stats = 'stud_stats1' limit 1";
 $result = $mysqli->query($sql);
 
 if ($result){
     if($result && mysqli_num_rows($result) > 0){
-        $remarks = "To Offer";
-        $remarks1 = "Approved";
-        $sql1 = "SELECT * FROM student_request WHERE remarks = '$remarks' OR remarks = '$remarks1' ORDER BY yr_and_sem ASC ";
-        $display_student_req = $mysqli->query($sql1);
-    }
-    else{
         $remarks = "To Offer";
         $remarks1 = "Approved";
         $sql1 = "SELECT * FROM student_request WHERE remarks = '$remarks' OR remarks = '$remarks1' ORDER BY yr_and_sem ASC ";
@@ -99,13 +93,18 @@ function Approved() {
     // sql to update the record subject of the student in database
     $sql = "SELECT * FROM student_request WHERE stud_id ='$stud_id' AND remarks = '$remarks1' limit 1";
     $result = (mysqli_query($con, $sql));
+    
 
     if ($result)
     {
         if($result && mysqli_num_rows($result) > 0){
  
-            $update_result = "UPDATE `student_request` SET remarks = '$remarks2' WHERE stud_id = '$stud_id' AND remarks = '$remarks1' ";
+            $update_result = "UPDATE student_request SET remarks = '$remarks2' WHERE stud_id = '$stud_id' AND remarks = '$remarks1' ";
             $result = (mysqli_query($con, $update_result));
+
+            $stud_stats = 'Approved';
+            $update_result1 = "UPDATE student_accounts SET stud_stats = '$stud_stats' WHERE stud_id = '$stud_id' ";
+            $result1 = (mysqli_query($con, $update_result1));
                     
             // Display the alert box 
             echo "<script>alert('Updated');</script>";

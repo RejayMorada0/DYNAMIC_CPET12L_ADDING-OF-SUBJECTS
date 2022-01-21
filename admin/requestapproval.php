@@ -107,6 +107,9 @@ session_start();
                 <tbody id="fyfs">
                     <!-- PHP CODE TO FETCH DATA FROM ROWS-->
                     <?php   // LOOP TILL END OF DATA 
+                        if (!($result && mysqli_num_rows($result) > 0)) {
+                            echo "";
+                        } else {
                         while($rows=$display_student_req->fetch_assoc())
                         {
                     ?>
@@ -121,6 +124,7 @@ session_start();
                         <td><?php echo $rows['remarks'];?></td>
                     </tr>
                     <?php
+                        }
                         }
                     ?>
                 </tbody>

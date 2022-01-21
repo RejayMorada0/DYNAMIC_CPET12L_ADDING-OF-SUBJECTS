@@ -91,7 +91,10 @@ session_start();
                     </thead>
                     <tbody id=submitreqtable>
                         <!-- PHP CODE TO FETCH DATA FROM ROWS-->
-                        <?php   // LOOP TILL END OF DATA 
+                        <?php   // LOOP TILL END OF DATA
+                            if (!($result && mysqli_num_rows($result) > 0)) {
+                                echo "";
+                            } else {
                             while($rows=$display_student_req->fetch_assoc())
                             {
                         ?>
@@ -106,6 +109,7 @@ session_start();
                         </tr>
 
                         <?php
+                            }
                             }
                         ?>
                     </tbody>
