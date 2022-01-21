@@ -29,12 +29,14 @@ $result = $mysqli->query($sql);
 if ($result){
     if($result && mysqli_num_rows($result) > 0){
         $remarks = "To Offer";
-        $sql1 = "SELECT * FROM student_request WHERE remarks = '$remarks' ORDER BY yr_and_sem ASC ";
+        $remarks1 = "Approved";
+        $sql1 = "SELECT * FROM student_request WHERE remarks = '$remarks' OR remarks = '$remarks1' ORDER BY yr_and_sem ASC ";
         $display_student_req = $mysqli->query($sql1);
     }
     else{
         $remarks = "To Offer";
-        $sql1 = "SELECT * FROM student_request WHERE remarks = '$remarks' ORDER BY yr_and_sem ASC ";
+        $remarks1 = "Approved";
+        $sql1 = "SELECT * FROM student_request WHERE remarks = '$remarks' OR remarks = '$remarks1' ORDER BY yr_and_sem ASC ";
         $display_student_req = $mysqli->query($sql1);
     }
 }
