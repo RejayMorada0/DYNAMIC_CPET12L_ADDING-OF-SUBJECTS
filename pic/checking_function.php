@@ -40,7 +40,8 @@ $offer_result = $mysqli->query($sql1);
 
 
 
-//DIsplay uploaded grades image of the student in anchor tag 
+//DIsplay uploaded grades image of the student in anchor tag
+// source: How to retrieve images from MySQL database and display in an html tag 
 $stud_id = $_COOKIE['id'];
 $sql2 = "SELECT * FROM student_accounts WHERE stud_id = '$stud_id'";
 $image_result = $mysqli->query($sql2);
