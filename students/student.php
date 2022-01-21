@@ -121,7 +121,7 @@ session_start();
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
                         <label for="validationTooltip01">Subject Code</label>
-                        <input type="text" name= "sub_code" class="form-control" id="validationTooltip01" required>
+                        <input type="text" name= "sub_code" class="form-control" id="validationTooltip01" required >
 
                     </div>
                     <div class="col-md-4 mb-3">

@@ -65,10 +65,14 @@ $user_stats = mysqli_fetch_assoc($stats_pdf);
 
 if ($user_stats['stud_stats'] == 'Approved' ){
     $style = "style='display:grid;'";
+    
 }
 else {
     $style = "style='display:none;'";
 }
+
+
+
 
 
 
