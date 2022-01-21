@@ -4,6 +4,7 @@ session_start();
 
 	include("connection.php");
     include("student_function.php");
+    include("generate_pdf.php");
 	$user_data = check_login($con);
 
 
@@ -95,9 +96,11 @@ session_start();
                 <div class="statusCenter">
                     <label id='status1'><?php echo $user_data['stud_stats']; ?></label>
                 </div>
-                <div class="statusCenter" <?php echo $style;?>>
-                    <a href="" target="_blank"  > <i class="bi bi-download"></i> Download PDF</a>
-                </div>
+                <form class="form-inline" method="post" action="generate_pdf.php">
+                    <div class="statusCenter" <?php echo $style;?>>
+                        <button type="submit" id="pdf" name="generate_pdf" > <i class="bi bi-download"></i> Download PDF</button>
+                    </div>
+                </form>
             </div>
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
