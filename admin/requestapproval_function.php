@@ -116,4 +116,8 @@ function updateAction() {
 }
 
 
+//How to upload and download files PHP and MySQL
+//source : https://codewithawa.com/posts/how-to-upload-and-download-files-php-and-mysql
+// need pala natin maggenerate ng pdf hindi mag-uupload kuha lang tao idea sa link paano magdownload.
+
 ?>

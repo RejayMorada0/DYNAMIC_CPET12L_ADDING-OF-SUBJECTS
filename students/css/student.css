@@ -145,7 +145,6 @@ section {
 }
 
 .statusCenter a {
-    display: none;
     text-decoration: none;
     color: #E2435E;
     font-weight: 300px;
@@ -324,7 +323,6 @@ tr {
         color: white;
     }
     .statusCenter a {
-        display: none;
         text-decoration: none;
         color: white;
         font-weight: 300px;
