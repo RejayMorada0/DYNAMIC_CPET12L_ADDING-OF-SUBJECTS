@@ -18,7 +18,7 @@ if (!$con) {
 $stud_id = $_COOKIE['id'];
 $remarks = '';
 
-$update_result = "UPDATE `student_request` SET remarks = '$remrks' WHERE stud_id = '$stud_id' ";
+$update_result = "UPDATE `student_request` SET remarks = '$remarks' WHERE stud_id = '$stud_id' ";
 $result = (mysqli_query($con, $update_result));
 
 
