@@ -37,6 +37,14 @@ $offer_stats ="Offer";
 // SQL query to select data from database
 $sql1 = "SELECT * FROM all_subjects WHERE offer_stats = '$offer_stats' ORDER BY yr_and_sem ASC ";
 $offer_result = $mysqli->query($sql1);
+
+
+
+//DIsplay uploaded grades image of the student in anchor tag 
+$stud_id = $_COOKIE['id'];
+$sql2 = "SELECT * FROM student_accounts WHERE stud_id = '$stud_id'";
+$image_result = $mysqli->query($sql2);
+$image_data = mysqli_fetch_assoc($image_result);
 $mysqli->close();
 
 

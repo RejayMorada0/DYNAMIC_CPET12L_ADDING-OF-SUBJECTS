@@ -160,7 +160,8 @@ session_start();
 
             <div class="imgforgrades">
                 <p>*Attached Files.</p>
-                <a target="_blank" href="tupclogo.png">Grades_Img.jpg</a>
+                <a target="_blank" href="../students/upload/<?php echo $image_data['image']; ?>" > <?php echo $image_data['image']; ?> </a>
+               
             </div>
 
             </div>

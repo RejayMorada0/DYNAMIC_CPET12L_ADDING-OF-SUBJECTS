@@ -127,7 +127,7 @@ function submitAction() {
 
     //confirmation
     // https://stackoverflow.com/questions/37659396/confirm-box-in-php
-/*
+
     // call the connections
     $dbhost = "localhost";
     $dbuser = "root";
@@ -199,7 +199,7 @@ function submitAction() {
     else {
         echo mysqli_connect_error();
     }
-  */
+ 
     
 }
 
