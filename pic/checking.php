@@ -159,7 +159,8 @@ session_start();
             </div>
 
             <div class="imgforgrades">
-                <p>*Attached Files.</p>
+                <p>*Attached Files is the grades of the sudents in following academic year and download it to double check the input grades of the students in the system. <br>
+                After you edit the remarks of the student request, submit it and wait for admin's approval. </p>
                 <a target="_blank" href="../students/upload/<?php echo $image_data['image']; ?>" > <?php echo $image_data['image']; ?> </a>
                
             </div>
@@ -168,10 +169,10 @@ session_start();
 
         </form>
 
-        <form class="needs-validation" action="javascript:submitToAdmin();" novalidate>
+        <form class="needs-validation" method="post">
             <div class="submitbutton">
-                <button class="btn btn-primary" type="submit" id="submitbtn">Submit Requests</button>
-                <!--<input type="button" value="Submit" id="submitbtn" data-toggle="modal" data-target="#staticBackdrop">-->
+                <input class="btn btn-primary" type="submit" id="submitbtn" value="Submit Requests" name="submitAction">
+                <!--<button class="btn btn-primary" type="submit" id="submitbtn">Submit Requests</button>-->
             </div>
         </form>
     </section>

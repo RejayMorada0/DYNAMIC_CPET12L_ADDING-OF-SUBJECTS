@@ -80,11 +80,14 @@ if(isset($_COOKIE['id'])) {
 if(array_key_exists('remarkAction', $_POST)) {
     remarkAction();
 }
+else if(array_key_exists('submitAction', $_POST)) {
+    submitAction();
+}
 
 //remark function
 function remarkAction() {
     
- // call the connections
+    // call the connections
     $dbhost = "localhost";
     $dbuser = "root";
     $dbpass = "";
@@ -135,9 +138,42 @@ function remarkAction() {
 }
 
 
+//submit function
+function submitAction() {
+    //codehere
+    // status change in 'Wait for Approval'
+    // Display the alert box 
+    echo "<script>alert('Wait for Admin's Approval');</script>";
+
+    // call the connections
+    $dbhost = "localhost";
+    $dbuser = "root";
+    $dbpass = "";
+    $dbname = "adding_subjects_db";
+    $con = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
 
+    //error handling
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
 
+    
+    //input was posted
+    $stud_id = $_COOKIE['id'];
+
+    // sql to update the record subject of the student in database
+    $stud_stats ="Wait for Approval";
+    $sql = "UPDATE student_accounts SET stud_stats ='$stud_stats' WHERE stud_id ='$stud_id' ";
+    $result = (mysqli_query($con, $sql));
+
+    
+    // head to the nect page directory
+    $path = $_SERVER['SERVER_NAME'].'../../../pic';
+    header("location: " . $path ."/studentrecords.php");
+    die;
+                
+}
 
 
 ?>
