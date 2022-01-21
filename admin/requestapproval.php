@@ -77,10 +77,24 @@ session_start();
     <section>
         <div class="welcome">WELCOME, DEPARTMENT HEAD!</div>
 
-
         <div class="reqapproval">
             <p>REQUEST APPROVAL</p>
+            <form class="needs-validation" method="post">
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationTooltip01">Student Number</label>
+                        <input type="text" name = "stud_id" class="form-control" id="validationTooltip01" required>
 
+                    </div>
+
+                    <div class="remarkbttn">
+                        <input class="btn btn-primary" type="submit" id="Approved" value="Approved" name="Approved">
+                    </div>
+            </form>
+        </div>
+
+        <div class="reqapproval">
+            
             <table>
                 <thead>
                     <th>ID</th>
@@ -116,47 +130,7 @@ session_start();
 
 
 
-        <!-- Modal -->
-        <form class="reqsub">
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">REQUEST SUBJECTS</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-                        </div>
-                        <div class="modal-body" id="modalBody">
-
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="approveone" data-toggle="modal" data-target="#staticBackdrop">Approve</button>
-                            <button type="button" class="approveall" data-toggle="modal" data-target="#staticBackdrop">Approve All</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <!-- Modal -->
-        <div class="modal fade " id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" style="width: 500px;">
-                <div class="modal-content">
-                    <div class="modal-header" style="border: transparent;">
-
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-                    </div>
-                    <div class="modal-body" style="display: grid; justify-items: center;width: 100%;  row-gap: 50px;">
-                        <img src="https://img.icons8.com/office/100/000000/checked--v1.png" />
-                        <h1 style="color: #000000;">Thanks for approving!</h1>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        
 
 
 
