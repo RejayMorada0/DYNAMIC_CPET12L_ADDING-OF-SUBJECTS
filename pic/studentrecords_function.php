@@ -23,7 +23,7 @@ if ($mysqli->connect_error) {
 // SQL query to select data from database
 $stud_stats = 'Wait for Approval';
 $stud_stats1 = 'Approved';
-$sql = "SELECT * FROM student_accounts WHERE stud_stats = '$stud_stats' OR stud_stats = 'stud_stats1' limit 1";
+$sql = "SELECT * FROM student_accounts WHERE stud_stats = '$stud_stats' OR stud_stats = '$stud_stats1'  limit 1";
 $result = $mysqli->query($sql);
 
 if ($result){
