@@ -53,7 +53,7 @@ session_start();
                     <p class="nav-link" id="studentname">STUDENT: email1@gmail.com </p>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="pic.php" id="cancelbutton">Cancel</a>
+                    <a class="nav-link" href="cancel.php" id="cancelbutton">Cancel</a>
                 </li>
             </ul>
         </form>
@@ -83,7 +83,7 @@ session_start();
                     ?>
                 </ol>
         </div>
-        <a class="nav-link" href="pic.php" id="cancelbutton1">Cancel</a>
+        <a class="nav-link" href="cancel.php" id="cancelbutton1">Cancel</a>
     </section>
 
 
