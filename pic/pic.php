@@ -130,7 +130,7 @@ session_start();
             $(document).ready (function () {
                     var updater = setTimeout (function () {
                         $('body#ajax_func').load ('pic.php', 'update=true');
-                    }, 1000);
+                    }, 5000);
                 });
 
             // Functions to get data on onclick php and html table
