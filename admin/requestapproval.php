@@ -94,7 +94,7 @@ session_start();
         </div>
 
         <div class="reqapproval">
-            
+
             <table>
                 <thead>
                     <th>ID</th>
@@ -129,17 +129,7 @@ session_start();
         </div>
 
 
-
-        
-
-
-
-
-
     </section>
-
-
-
 
 
 

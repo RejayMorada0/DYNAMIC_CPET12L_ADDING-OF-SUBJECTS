@@ -52,9 +52,6 @@ $display_student_req = $mysqli->query($sql);
 if(array_key_exists('updateAction', $_POST)) {
     updateAction();
 }
-else if(array_key_exists('submitAction', $_POST)) {
-    submitAction();
-}
 
 //update function
 function updateAction() {
@@ -73,29 +70,21 @@ function updateAction() {
     }
 
     
-    // Call student id
-    $email = $_SESSION['email'];
-    $stud_sql = "SELECT stud_id FROM student_accounts WHERE email ='$email' ";
-    $stud_sql_result = mysqli_query($con, $stud_sql);
-    $user_data = mysqli_fetch_assoc($stud_sql_result);
-
-    
     //input was posted
-    $stud_id = $user_data['stud_id'];
-	$sub_code = $_POST['sub_code'];
-	$grades = $_POST['grades'];
-    $remarks = $_POST['remarks'];
+    $stud_id = $_POST['stud_id'];
+    $remarks1 = "To Offer";
+    $remarks2 = "Approved";
 
 
     // sql to update the record subject of the student in database
-    $sql = "SELECT * FROM student_request WHERE stud_id ='$stud_id' AND sub_code = '$sub_code' AND remarks = '$remarks' AND  limit 1";
+    $sql = "SELECT * FROM student_request WHERE stud_id ='$stud_id' limit 1";
     $result = (mysqli_query($con, $sql));
 
     if ($result)
     {
         if($result && mysqli_num_rows($result) > 0){
  
-            $update_result = "UPDATE `student_request` SET grades = '$grades' WHERE sub_code = '$sub_code' AND stud_id = '$stud_id' ";
+            $update_result = "UPDATE `student_request` SET remarks = '$remarks2' WHERE stud_id = '$stud_id' AND remarks = '$remarks1' ";
             $result = (mysqli_query($con, $update_result));
                     
             // Display the alert box 
@@ -118,6 +107,6 @@ function updateAction() {
 
 //How to upload and download files PHP and MySQL
 //source : https://codewithawa.com/posts/how-to-upload-and-download-files-php-and-mysql
-// need pala natin maggenerate ng pdf hindi mag-uupload kuha lang tao idea sa link paano magdownload.
+// need pala natin maggenerate ng pdf hindi mag-uupload, kuha lang tao idea sa link paano magdownload.
 
 ?>
