@@ -52,7 +52,7 @@ if ($result){
     if($result && mysqli_num_rows($result) > 0){
         $remarks = "To Offer";
         $remarks1 = "Approved";
-        $sql1 = "SELECT * FROM student_request WHERE remarks = '$remarks' OR remarks = '$remarks1' ORDER BY yr_and_sem ASC ";
+        $sql1 = "SELECT * FROM student_request WHERE remarks = '$remarks' OR remarks = '$remarks1' ORDER BY stud_id ASC ";
         $display_student_req = $mysqli->query($sql1);
     }
 }
