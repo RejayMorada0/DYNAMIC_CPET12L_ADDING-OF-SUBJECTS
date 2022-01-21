@@ -144,7 +144,7 @@ section {
     text-align: center;
 }
 
-.statusCenter a {
+.statusCenter button {
     text-decoration: none;
     color: #E2435E;
     font-weight: 300px;
@@ -322,7 +322,7 @@ tr {
         border-radius: 0px 0px 10px 10px;
         color: white;
     }
-    .statusCenter a {
+    .statusCenter button {
         text-decoration: none;
         color: white;
         font-weight: 300px;
