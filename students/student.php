@@ -115,7 +115,7 @@ session_start();
         <div class="subject">
             <p>REQUEST OF SUBJECT</p>
             <form method="post">
-                <input type="submit" value="Request New" id="editGrade"  name="editAction" <?php echo $style1;?>  >
+                <input style='background-color: white;' type="submit" value="Request New" id="editGrade"  name="editAction" <?php echo $style1;?>  >
             </form>
         </div>
 
