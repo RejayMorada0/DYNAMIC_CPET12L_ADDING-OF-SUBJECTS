@@ -229,13 +229,13 @@ function submitAction() {
             }
             }
             // Display the alert box 
-            echo "<script>alert('Updated');</script>";
+            echo "<script>alert('Submit request successfully.');</script>";
 
         }
         else {
                     
             // Display the alert box 
-            echo "<script>alert('Handling error.');</script>";
+            echo "<script>alert('Unsuccessful');</script>";
            
         }
     }
