@@ -65,7 +65,7 @@ $user_stats = mysqli_fetch_assoc($stats_pdf);
 
 if ($user_stats['stud_stats'] == 'Approved' ){
     $style = "style='display:grid;'";
-    $style1 = "style ='background-color:#E2435E;'";
+    $style1 = "style ='background-color:white;'";
 }
 else {
     $style = "style='display:none;'";
