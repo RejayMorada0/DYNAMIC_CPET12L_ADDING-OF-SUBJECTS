@@ -275,7 +275,7 @@ function editAction() {
     {
         if($result && mysqli_num_rows($result) > 0){
  
-            $delete_result = "DELETE student_request WHERE stud_id = '$stud_id' ";
+            $delete_result = "DELETE FROM student_request WHERE stud_id = '$stud_id' ";
             $result = (mysqli_query($con, $delete_result));
                     
             // renew record
@@ -293,7 +293,7 @@ function editAction() {
                 $sub_code = $rows['sub_code'];
                 $sub_name= $rows['sub_name'];
                 $yr_and_sem= $rows['yr_and_sem'];
-                $add_result = "INSERT INTO student_request (stugit d_id, sub_code, sub_name, yr_and_sem, grades, remarks) VALUES ('$stud_id','$sub_code','$sub_name', '$yr_and_sem', '$grades','$remarks')";
+                $add_result = "INSERT INTO student_request (stud_id, sub_code, sub_name, yr_and_sem, grades, remarks) VALUES ('$stud_id','$sub_code','$sub_name', '$yr_and_sem', '$grades','$remarks')";
                 $result1 = (mysqli_query($con, $add_result));
             }
             
@@ -304,15 +304,10 @@ function editAction() {
             $result2 = (mysqli_query($con, $update_result1));
 
             // Display the alert box 
-            echo "<script>alert('Successfully created account, but you need to login first.');</script>";
+            echo "<script>alert('Successfully refresh the request. Ready to edit again.');</script>";
 
         }
-        else {
-                    
-            // Display the alert box 
-            echo "<script>alert('Student request does not exist.');</script>";
-           
-        }
+        
     }
     else {
         echo mysqli_connect_error();
