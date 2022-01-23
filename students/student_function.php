@@ -247,10 +247,7 @@ function submitAction() {
 }
 
 function editAction() {
-
-    echo "<script>alert('Handling error.');</script>";
-
-    //echo "<script>alert('Handling error.');</script>";
+    
     $stud_id = $_COOKIE['id'];
 
     // call the connections
