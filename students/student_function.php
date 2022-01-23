@@ -247,7 +247,7 @@ function submitAction() {
 }
 
 function editAction() {
-    //echo "<script>alert('Handling error.');</script>";
+    echo "<script>alert('Handling error.');</script>";
 
 }
 
