@@ -253,7 +253,6 @@ function editAction() {
     //echo "<script>alert('Handling error.');</script>";
     $stud_id = $_COOKIE['id'];
 
-
     // call the connections
     $dbhost = "localhost";
     $dbuser = "root";
@@ -266,6 +265,8 @@ function editAction() {
     if (!$con) {
         die("Connection failed: " . mysqli_connect_error());
 
+    }
+
     // sql to delete the record subject of the student in database
     $sql = "SELECT * FROM student_request WHERE stud_id ='$stud_id' limit 1";
     $result = (mysqli_query($con, $sql));
@@ -274,7 +275,7 @@ function editAction() {
     {
         if($result && mysqli_num_rows($result) > 0){
  
-            $delete_result = "DELETE `student_request` WHERE stud_id = '$stud_id' ";
+            $delete_result = "DELETE student_request WHERE stud_id = '$stud_id' ";
             $result = (mysqli_query($con, $delete_result));
                     
             // renew record
