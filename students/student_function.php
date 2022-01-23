@@ -293,10 +293,16 @@ function editAction() {
                 $sub_code = $rows['sub_code'];
                 $sub_name= $rows['sub_name'];
                 $yr_and_sem= $rows['yr_and_sem'];
-                $add_result = "INSERT INTO student_request (stud_id, sub_code, sub_name, yr_and_sem, grades, remarks) VALUES ('$stud_id','$sub_code','$sub_name', '$yr_and_sem', '$grades','$remarks')";
+                $add_result = "INSERT INTO student_request (stugit d_id, sub_code, sub_name, yr_and_sem, grades, remarks) VALUES ('$stud_id','$sub_code','$sub_name', '$yr_and_sem', '$grades','$remarks')";
                 $result1 = (mysqli_query($con, $add_result));
             }
             
+            //refresh student account status and image
+            $stud_stats = "Processing";
+            $image = "";
+            $update_result1 = "UPDATE student_accounts SET stud_stats='$stud_stats', image = '$image' WHERE stud_id = '$stud_id'";
+            $result2 = (mysqli_query($con, $update_result1));
+
             // Display the alert box 
             echo "<script>alert('Successfully created account, but you need to login first.');</script>";
 
