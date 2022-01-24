@@ -78,7 +78,7 @@ if ($user_stats['stud_stats'] == 'Processing' ){
     echo "<script>document.getElementById('validationTooltip02').disabled = false;</script>";
     echo "<script>document.getElementById('updategrade').disabled = false;</script>";
     echo "<script>document.getElementById('submitbtn').disabled = false;</script>";
-    $disable_style = "style='background-color:#E2435E;'";
+    $disable_style = "style='background-color:#E2435E; color:white;'";
     
 }
 else {
