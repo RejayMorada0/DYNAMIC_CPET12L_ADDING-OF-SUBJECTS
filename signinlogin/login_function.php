@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
         //read admin accounts from database
         $query2 = "select * from admin_access where email = '$email' limit 1";
         $result2 = mysqli_query($con, $query2);
-
+        
         if($result)
         {
             if($result && mysqli_num_rows($result) > 0)
@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                 }
             }
         }
-        if($result1)
+        elseif($result1)
         {
             if($result1 && mysqli_num_rows($result1) > 0)
             {
@@ -57,10 +57,11 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                     header("location: " . $path ."/pic.php");
                     die;
                 }
+                
             }
         }
 
-        if($result2)
+        elseif($result2)
         {
             if($result2 && mysqli_num_rows($result2) > 0)
             {

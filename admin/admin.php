@@ -5,7 +5,6 @@ session_start();
 
     include("admin_function.php");
 
-
     // kapag nakapaglogout na hindi pwede mag click go back para maghold sa history
     // para ito sa security sa data ng admin
     if(!isset($_SESSION['email']))
@@ -15,6 +14,8 @@ session_start();
         header("location: " . $path ."/index.php");
         die;
     }
+    
+    
 
 ?> 
 
