@@ -14,7 +14,7 @@ session_start();
         header("location: " . $path ."/index.php");
         die;
     }
-    
+
     
 
 ?> 
